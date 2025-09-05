@@ -15,6 +15,10 @@
     --shadow-xl: 0 12px 24px rgba(0,0,0,0.25);
     --font-poppins: 'Poppins', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
+    --max-width-xl: 1280px;
+    --max-width-lg: 1024px;
+    --max-width-md: 768px;
+    --max-width-sm: 640px;
 }
 
 * {
@@ -35,9 +39,15 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--max-width-xl);
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 16px;
+    }
 }
 
 .btn {
@@ -97,13 +107,28 @@ body {
 
 .section-title {
     font-family: var(--font-poppins);
-    font-size: 2.5rem;
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: 700;
     color: var(--charcoal);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--medium-gray);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
 }

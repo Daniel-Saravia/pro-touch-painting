@@ -87,9 +87,16 @@
     border-radius: 2px;
 }
 
+@media (max-width: 1024px) {
+    .navMenu {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .mobileMenuToggle {
         display: flex;
+        z-index: 1001;
     }
     
     .navMenu {
@@ -103,9 +110,36 @@
         transition: 0.3s;
         box-shadow: var(--shadow-lg);
         padding: 2rem 0;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
     
     .navMenu.active {
         left: 0;
+    }
+    
+    .navMenu li {
+        padding: 0.5rem 0;
+    }
+    
+    .navMenu a {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        display: block;
+    }
+    
+    .ctaNav {
+        margin: 1rem auto 0;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .navMenu {
+        top: 60px;
     }
 }

@@ -5,7 +5,7 @@
 
 .servicesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
 }
 
@@ -108,12 +108,56 @@
     color: var(--deep-maroon);
 }
 
-@media (max-width: 768px) {
-    .servicesGrid {
-        grid-template-columns: 1fr;
-    }
-    
+@media (max-width: 1200px) {
     .serviceCard.featured {
         grid-column: span 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services {
+        padding: 4rem 0;
+    }
+    
+    .servicesGrid {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: 3rem 0;
+    }
+    
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .serviceCard {
+        padding: 2rem;
+    }
+    
+    .serviceTitle {
+        font-size: 1.3rem;
+    }
+    
+    .serviceDescription {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .serviceCard {
+        padding: 1.5rem;
+    }
+    
+    .serviceIcon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .serviceFeatures {
+        font-size: 0.9rem;
     }
 }

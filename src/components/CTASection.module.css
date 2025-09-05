@@ -24,12 +24,43 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 1024px) {
+    .ctaSection {
+        padding: 3.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .ctaSection {
+        padding: 3rem 0;
+    }
+    
+    .ctaTitle {
+        font-size: 2rem;
+    }
+    
+    .ctaSubtitle {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 480px) {
+    .ctaTitle {
+        font-size: 1.75rem;
+    }
+    
+    .ctaSubtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
     .ctaButtons {
         flex-direction: column;
+        padding: 0 1rem;
     }
     
     .ctaButtons .btn {
         width: 100%;
+        max-width: 280px;
     }
 }

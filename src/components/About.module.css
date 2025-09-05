@@ -75,12 +75,49 @@
     font-weight: 500;
 }
 
+@media (max-width: 1024px) {
+    .about {
+        padding: 4rem 0;
+    }
+    
+    .aboutContent {
+        gap: 3rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .about {
+        padding: 3rem 0;
+    }
+    
     .aboutContent {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .aboutStats {
+        grid-template-columns: 2fr;
+    }
+    
+    .statCard {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutStats {
         grid-template-columns: 1fr;
+    }
+    
+    .statNumber {
+        font-size: 2rem;
+    }
+    
+    .aboutFeature h4 {
+        font-size: 1.1rem;
+    }
+    
+    .aboutFeature p {
+        font-size: 0.9rem;
     }
 }

@@ -46,8 +46,41 @@
     color: var(--medium-gray);
 }
 
+@media (max-width: 1024px) {
+    .testimonials {
+        padding: 4rem 0;
+    }
+    
+    .testimonialsGrid {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .testimonials {
+        padding: 3rem 0;
+    }
+    
     .testimonialsGrid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .testimonialCard {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonialCard {
+        padding: 1.25rem;
+    }
+    
+    .testimonialText {
+        font-size: 0.95rem;
+    }
+    
+    .testimonialRating {
+        font-size: 1.25rem;
     }
 }
