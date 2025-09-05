@@ -1,0 +1,111 @@
+.header {
+    background-color: var(--charcoal);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.navMenu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navMenu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.navMenu a:hover {
+    color: var(--light-orange);
+}
+
+.navMenu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-orange);
+    transition: width 0.3s ease;
+}
+
+.navMenu a:hover::after {
+    width: 100%;
+}
+
+.ctaNav {
+    background-color: var(--primary-orange);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.ctaNav:hover {
+    background-color: var(--light-orange);
+    color: var(--charcoal) !important;
+    transform: translateY(-2px);
+}
+
+.mobileMenuToggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobileMenuToggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .mobileMenuToggle {
+        display: flex;
+    }
+    
+    .navMenu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--charcoal);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-lg);
+        padding: 2rem 0;
+    }
+    
+    .navMenu.active {
+        left: 0;
+    }
+}

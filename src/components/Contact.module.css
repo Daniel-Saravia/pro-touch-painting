@@ -1,0 +1,129 @@
+.contact {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.contactContent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.contactForm {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+}
+
+.formGroup textarea {
+    resize: vertical;
+}
+
+.infoCard {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+}
+
+.infoCard h3 {
+    font-family: var(--font-poppins);
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.infoItem svg {
+    color: var(--primary-orange);
+    flex-shrink: 0;
+}
+
+.infoItem strong {
+    display: block;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+}
+
+.infoItem p {
+    color: var(--medium-gray);
+}
+
+.trustBadges {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge svg {
+    color: var(--primary-orange);
+}
+
+.badge span {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+    
+    .contactContent {
+        grid-template-columns: 1fr;
+    }
+}

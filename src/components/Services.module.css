@@ -1,0 +1,119 @@
+.services {
+    padding: 5rem 0;
+    background-color: var(--light-gray);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.serviceCard {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.serviceCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-orange), var(--deep-maroon));
+}
+
+.serviceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.serviceCard.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--primary-orange), var(--deep-maroon));
+    color: var(--white);
+}
+
+.serviceCard.featured .serviceIcon {
+    color: var(--white);
+}
+
+.serviceCard.featured .serviceLink {
+    color: var(--white);
+}
+
+.serviceIcon {
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+}
+
+.serviceTitle {
+    font-family: var(--font-poppins);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+}
+
+.serviceCard.featured .serviceTitle {
+    color: var(--white);
+}
+
+.serviceDescription {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--medium-gray);
+}
+
+.serviceCard.featured .serviceDescription {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.serviceFeatures {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.serviceFeatures li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.serviceFeatures li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-green);
+    font-weight: bold;
+}
+
+.serviceCard.featured .serviceFeatures li::before {
+    color: var(--white);
+}
+
+.serviceLink {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.serviceLink:hover {
+    color: var(--deep-maroon);
+}
+
+@media (max-width: 768px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .serviceCard.featured {
+        grid-column: span 1;
+    }
+}
