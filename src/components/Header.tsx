@@ -17,7 +17,7 @@ export default function Header() {
         <div className="container">
           <div className={styles.navWrapper}>
             <div className={styles.logo}>
-              <Image src="/logo.png" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
+              <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
             </div>
             <button 
               className={styles.mobileMenuToggle}

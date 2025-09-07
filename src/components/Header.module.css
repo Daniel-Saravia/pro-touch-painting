@@ -22,6 +22,11 @@
     align-items: center;
 }
 
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
 .navMenu {
     display: flex;
     list-style: none;
@@ -94,6 +99,10 @@
 }
 
 @media (max-width: 768px) {
+    .logo img {
+        width: 120px;
+    }
+    
     .mobileMenuToggle {
         display: flex;
         z-index: 1001;
@@ -135,6 +144,10 @@
 }
 
 @media (max-width: 480px) {
+    .logo img {
+        width: 100px;
+    }
+    
     .navbar {
         padding: 0.75rem 0;
     }
