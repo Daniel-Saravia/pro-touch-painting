@@ -114,7 +114,7 @@ export default function Contact() {
                 </svg>
                 <div>
                   <strong>Phone</strong>
-                  <p>(555) 012-3456</p>
+                  <p>(602) 680-7263</p>
                 </div>
               </div>
               <div className={styles.infoItem}>
