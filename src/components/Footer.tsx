@@ -53,7 +53,7 @@ export default function Footer() {
               <li><a href="#gallery">Gallery</a></li>
               <li><a href="#testimonials">Reviews</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Free Quote</a></li>
+              <li><a href="#contact">Free Quote</a></li>
             </ul>
           </div>
           <div className={styles.footerColumn}>
