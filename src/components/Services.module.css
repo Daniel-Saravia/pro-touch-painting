@@ -12,11 +12,12 @@
 .serviceCard {
     background-color: var(--white);
     border-radius: 15px;
-    padding: 2.5rem;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .serviceCard::before {
@@ -46,6 +47,36 @@
 
 .serviceCard.featured .serviceLink {
     color: var(--white);
+}
+
+.serviceImageContainer {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.serviceImage {
+    object-fit: cover;
+}
+
+.serviceImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--medium-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.serviceContent {
+    padding: 2.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .serviceIcon {
@@ -134,8 +165,12 @@
         gap: 1.5rem;
     }
     
-    .serviceCard {
+    .serviceContent {
         padding: 2rem;
+    }
+    
+    .serviceImageContainer {
+        height: 180px;
     }
     
     .serviceTitle {
@@ -148,8 +183,12 @@
 }
 
 @media (max-width: 480px) {
-    .serviceCard {
+    .serviceContent {
         padding: 1.5rem;
+    }
+    
+    .serviceImageContainer {
+        height: 160px;
     }
     
     .serviceIcon svg {

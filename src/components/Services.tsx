@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './Services.module.css'
 
 const services = [
@@ -13,6 +14,7 @@ const services = [
     ),
     title: "Drywall Installation & Repair",
     description: "Expert installation of new drywall and seamless repairs for existing walls. We handle everything from small patches to complete room installations.",
+    image: "/assets/drywall.avif",
     features: [
       "New construction drywall",
       "Damage repair & patching",
@@ -30,6 +32,7 @@ const services = [
     ),
     title: "Popcorn Ceiling Removal",
     description: "Transform outdated popcorn ceilings into smooth, modern surfaces. Safe removal with minimal mess and disruption to your home.",
+    image: "/assets/popcorn.avif",
     features: [
       "Safe asbestos testing",
       "Clean removal process",
@@ -47,6 +50,7 @@ const services = [
     ),
     title: "Cabinet Refinishing",
     description: "Give your kitchen or bathroom a stunning makeover with professional cabinet refinishing. Save thousands compared to replacement.",
+    image: "/assets/cabinet.avif",
     features: [
       "Complete color changes",
       "Professional spray finishing",
@@ -68,6 +72,7 @@ const services = [
     ),
     title: "Power Washing",
     description: "Restore your property's exterior surfaces to like-new condition with professional power washing services.",
+    image: "/assets/Power-Washing-Your-Driveway.avif",
     features: [
       "House exterior cleaning",
       "Driveway & sidewalk restoration",
@@ -88,6 +93,7 @@ const services = [
     ),
     title: "Texture Application",
     description: "Add character and dimension to your walls and ceilings with professional texture application services.",
+    image: "/assets/Types-of-Wall-Texture.avif",
     features: [
       "Orange peel texture",
       "Knockdown texture",
@@ -104,6 +110,7 @@ const services = [
     ),
     title: "Interior & Exterior Painting",
     description: "Transform any space with our premium painting services. We use top-quality paints and meticulous techniques for flawless results.",
+    image: "/assets/construction-worker-painting.avif",
     features: [
       "Color consultation",
       "Premium paint products",
@@ -125,17 +132,30 @@ export default function Services() {
         <div className={styles.servicesGrid}>
           {services.map((service) => (
             <div key={service.id} className={`${styles.serviceCard} ${service.featured ? styles.featured : ''}`}>
-              <div className={styles.serviceIcon}>
-                {service.icon}
+              <div className={styles.serviceImageContainer}>
+                {service.image ? (
+                  <Image 
+                    src={service.image} 
+                    alt={service.title}
+                    fill
+                    className={styles.serviceImage}
+                  />
+                ) : (
+                  <div className={styles.serviceImagePlaceholder}>
+                    <span>Service Image</span>
+                  </div>
+                )}
               </div>
-              <h3 className={styles.serviceTitle}>{service.title}</h3>
-              <p className={styles.serviceDescription}>{service.description}</p>
-              <ul className={styles.serviceFeatures}>
-                {service.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-              <a href="#contact" className={styles.serviceLink}>Learn More →</a>
+              <div className={styles.serviceContent}>
+                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <p className={styles.serviceDescription}>{service.description}</p>
+                <ul className={styles.serviceFeatures}>
+                  {service.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+                <a href="#contact" className={styles.serviceLink}>Learn More →</a>
+              </div>
             </div>
           ))}
         </div>

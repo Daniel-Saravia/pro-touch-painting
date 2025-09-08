@@ -70,7 +70,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>&copy; 2024 Pro Touch Painting & Drywall. All rights reserved. | Licensed & Insured | ROC #123456</p>
+          <p>&copy; 2025 Pro Touch Painting & Drywall. All rights reserved. | Licensed & Insured | CR - 34 #328624 | CR - 10 #342592</p>
         </div>
       </div>
     </footer>
