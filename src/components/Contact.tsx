@@ -12,10 +12,39 @@ export default function Contact() {
     message: ''
   })
 
-  const handleSubmit = (e: FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will contact you soon.')
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/submit-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        alert('Thank you for your inquiry! We will contact you soon.')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        })
+      } else {
+        alert('Sorry, there was an error submitting your request. Please try again.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Sorry, there was an error submitting your request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -102,7 +131,9 @@ export default function Contact() {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary btn-block">Get Free Quote</button>
+              <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Get Free Quote'}
+              </button>
             </form>
           </div>
           <div className={styles.contactInfo}>

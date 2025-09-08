@@ -12,8 +12,7 @@ function FBXModel({ isMobile, scale }: { isMobile: boolean, scale: number }) {
   useFrame((state) => {
     if (meshRef.current) {
       if (isMobile) {
-        meshRef.current.rotation.y += 0.01
-        meshRef.current.rotation.x += 0.005
+        meshRef.current.rotation.y += 0.005
       } else {
         const mouseX = state.pointer.x * 0.5
         const mouseY = state.pointer.y * 0.5
@@ -104,37 +103,6 @@ export default function Hero3DModel() {
       </Canvas>
       </div>
       
-      {/* Model Size Controls */}
-      <div 
-        style={{
-          position: 'absolute',
-          bottom: '20px',
-          right: '20px',
-          zIndex: 10,
-          background: 'rgba(0, 0, 0, 0.7)',
-          padding: '15px',
-          borderRadius: '8px',
-          color: 'white',
-          fontSize: '14px'
-        }}
-      >
-        <div style={{ marginBottom: '10px', fontWeight: 'bold' }}>Model Size</div>
-        <input
-          type="range"
-          min="1"
-          max="10"
-          step="0.5"
-          value={modelScale}
-          onChange={(e) => setModelScale(parseFloat(e.target.value))}
-          style={{
-            width: '120px',
-            marginBottom: '5px'
-          }}
-        />
-        <div style={{ textAlign: 'center', fontSize: '12px' }}>
-          {modelScale.toFixed(1)}x
-        </div>
-      </div>
     </>
   )
 }
