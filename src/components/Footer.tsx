@@ -65,7 +65,7 @@ export default function Footer() {
             </ul>
             <div className={styles.emergencyContact}>
               <p><strong>24/7 Emergency Service</strong></p>
-              <a href="tel:555-0123" className={styles.emergencyNumber}>(555) 012-3456</a>
+              <a href="tel:602-680-7263" className={styles.emergencyNumber}>(602) 680-7263</a>
             </div>
           </div>
         </div>
