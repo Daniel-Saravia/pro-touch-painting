@@ -63,4 +63,4 @@ This project is configured for Vercel deployment:
 
 ## License
 
-© 2024 Pro Touch Painting & Drywall. All rights reserved.
+© 2025 Pro Touch Painting & Drywall. All rights reserved.
