@@ -47,6 +47,7 @@ export default function About() {
                 <div>
                   <h4>Licensed & Insured</h4>
                   <p>Fully licensed, bonded, and insured for your protection</p>
+                  <p className={styles.licenseNumbers}>CR - 34 #328624 | CR - 10 #342592</p>
                 </div>
               </div>
             </div>
