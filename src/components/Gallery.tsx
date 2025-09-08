@@ -9,14 +9,14 @@ const galleryItems = [
     category: 'painting',
     title: 'Living Room Transformation',
     description: 'Complete interior painting with accent wall',
-    image: '/gallery/painting-1.jpg'
+    image: '/assets/gallery/livingRoom.avif'
   },
   {
     id: 2,
     category: 'drywall',
     title: 'Drywall Repair & Finishing',
     description: 'Water damage restoration and seamless repair',
-    image: '/gallery/drywall-1.jpg'
+    image: '/assets/gallery/drywall-1.jpg'
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export default function Gallery() {
     : galleryItems.filter(item => item.category === activeCategory)
 
   return (
-    <section id="gallery" className={styles.gallery}>
+    <section id="gallery" className={`${styles.gallery} ${styles.hidden}`}>
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Our Work Gallery</h2>
@@ -71,9 +71,11 @@ export default function Gallery() {
           {filteredItems.map(item => (
             <div key={item.id} className={styles.galleryItem}>
               <div className={styles.imageContainer}>
-                <div className={styles.imagePlaceholder}>
-                  <span>Project Image</span>
-                </div>
+                <img 
+                  src={item.image} 
+                  alt={item.title}
+                  className={styles.galleryImage}
+                />
               </div>
               <h4>{item.title}</h4>
               <p>{item.description}</p>
