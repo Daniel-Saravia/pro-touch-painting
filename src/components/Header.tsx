@@ -11,12 +11,16 @@ export default function Header() {
     setMobileMenuOpen(false)
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className="container">
           <div className={styles.navWrapper}>
-            <div className={styles.logo}>
+            <div className={styles.logo} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
               <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
             </div>
             <button 
