@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.footerContent}>
           <div className={styles.footerColumn}>
-            <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={120} height={40} className={styles.footerLogo} />
+            <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={160} height={53} className={styles.footerLogo} />
             <p className={styles.footerDescription}>
               Your trusted partner for professional painting and drywall services. Quality craftsmanship, guaranteed satisfaction.
             </p>
