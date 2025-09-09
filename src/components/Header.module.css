@@ -74,8 +74,14 @@
     transform: translateY(-2px);
 }
 
-.mobileMenuToggle {
+.mobileNavControls {
     display: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobileMenuToggle {
+    display: flex;
     flex-direction: column;
     background: none;
     border: none;
@@ -88,8 +94,22 @@
     height: 3px;
     background-color: var(--white);
     margin: 3px 0;
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border-radius: 2px;
+    transform-origin: center;
+}
+
+.mobileMenuToggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobileMenuToggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.mobileMenuToggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 @media (max-width: 1024px) {
@@ -104,48 +124,190 @@
     justify-content: center;
 }
 
+
+.mobileMenuOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--charcoal);
+    transition: opacity 0.3s ease;
+    z-index: 998;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.mobileMenuOverlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlayHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+.overlayLogo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.overlayLogo img {
+    width: 180px;
+    height: auto;
+    max-height: 60px;
+    object-fit: contain;
+}
+
 @media (max-width: 768px) {
     .logo img {
         width: 120px;
     }
     
-    .mobileMenuToggle {
+    .mobileNavControls {
         display: flex;
-        z-index: 1001;
+    }
+    
+    .mobileMenuToggle {
+        z-index: 1002;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .navMenu {
         position: fixed;
-        left: -100%;
-        top: 70px;
+        left: 0;
+        top: 0;
         flex-direction: column;
-        background-color: var(--charcoal);
+        background-color: transparent;
         width: 100%;
+        max-width: 100%;
+        height: 100vh;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: var(--shadow-lg);
-        padding: 2rem 0;
-        max-height: calc(100vh - 70px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: none;
+        padding: 120px 1rem 1rem 1rem;
         overflow-y: auto;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 999;
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
     }
     
     .navMenu.active {
-        left: 0;
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: all;
     }
     
+    
     .navMenu li {
-        padding: 0.5rem 0;
+        padding: 0.25rem 0;
+        width: auto;
+        animation: fadeInUp 0.4s ease forwards;
+        opacity: 0;
+    }
+    
+    .navMenu.active li {
+        opacity: 1;
+    }
+    
+    .navMenu li:nth-child(1) { animation-delay: 0.1s; }
+    .navMenu li:nth-child(2) { animation-delay: 0.15s; }
+    .navMenu li:nth-child(3) { animation-delay: 0.2s; }
+    .navMenu li:nth-child(4) { animation-delay: 0.25s; }
+    .navMenu li:nth-child(5) { animation-delay: 0.3s; }
+    .navMenu li:nth-child(6) { animation-delay: 0.35s; }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .navMenu a {
-        font-size: 1.1rem;
-        padding: 0.5rem;
-        display: block;
+        font-size: 1.25rem;
+        padding: 0.75rem 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        transition: all 0.2s ease;
+        position: relative;
+        min-height: 48px;
+        color: var(--white);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+    
+    .navMenu a:hover {
+        color: var(--primary-orange);
+        transform: scale(1.1);
+    }
+    
+    .navMenu a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-orange);
+        transition: width 0.3s ease;
+    }
+    
+    .navMenu a:hover::after {
+        width: 100%;
+    }
+    
+    .menuIcon {
+        margin-right: 0.75rem;
+        font-size: 1.25rem;
+        width: 24px;
+        text-align: center;
     }
     
     .ctaNav {
-        margin: 1rem auto 0;
-        display: inline-block;
+        margin: 1rem auto;
+        display: inline-flex !important;
+        justify-content: center;
+        text-align: center;
+        background-color: var(--primary-orange);
+        border-radius: 30px;
+        font-weight: 600;
+        padding: 1rem 2.5rem !important;
+    }
+    
+    .ctaNav:hover {
+        background-color: var(--light-orange);
+        transform: scale(1.1);
+    }
+    
+    .ctaNav:hover::after {
+        display: none;
     }
 }
 
@@ -158,7 +320,26 @@
         padding: 0.75rem 0;
     }
     
+    .overlayHeader {
+        min-height: 70px;
+        padding: 1.25rem 1rem;
+    }
+    
+    .overlayLogo img {
+        width: 160px;
+        max-height: 55px;
+    }
+    
     .navMenu {
-        top: 60px;
+        padding-top: 100px;
+    }
+    
+    .navMenu a {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .menuIcon {
+        font-size: 1.1rem;
     }
 }
