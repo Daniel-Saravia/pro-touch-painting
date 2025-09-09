@@ -63,30 +63,13 @@ export default function Header() {
               </div>
             </div>
             <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
-              <li><a href="#home" onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>🏠</span>
-                {t('nav.home')}
-              </a></li>
-              <li><a href="#services" onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>🎨</span>
-                {t('nav.services')}
-              </a></li>
-              <li><a href="#gallery" onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>🖼️</span>
-                {t('nav.gallery')}
-              </a></li>
-              <li><a href="#about" onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>ℹ️</span>
-                {t('nav.about')}
-              </a></li>
-              <li><a href="#testimonials" onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>⭐</span>
-                {t('nav.testimonials')}
-              </a></li>
-              <li><a href="#contact" className={styles.ctaNav} onClick={handleLinkClick}>
-                <span className={styles.menuIcon}>📞</span>
-                {t('nav.getQuote')}
-              </a></li>
+              <li><a href="#home" onClick={handleLinkClick}>{t('nav.home')}</a></li>
+              <li><a href="#services" onClick={handleLinkClick}>{t('nav.services')}</a></li>
+              <li><a href="#gallery" onClick={handleLinkClick}>{t('nav.gallery')}</a></li>
+              <li><a href="#about" onClick={handleLinkClick}>{t('nav.about')}</a></li>
+              <li><a href="#testimonials" onClick={handleLinkClick}>{t('nav.testimonials')}</a></li>
+              <li><a href="#contact" className={styles.ctaNav} onClick={handleLinkClick}>{t('nav.getQuote')}</a></li>
+              <li className={styles.languageToggleItem}><LanguageToggle /></li>
             </ul>
           </div>
         </div>
