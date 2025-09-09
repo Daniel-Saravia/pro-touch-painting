@@ -1,0 +1,164 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "about": "Nosotros",
+    "testimonials": "Testimonios",
+    "getQuote": "Cotización"
+  },
+  "hero": {
+    "title": "Transforma Tu Espacio con Pro Touch",
+    "subtitle": "Pintura y Drywall Profesional",
+    "description": "Más de 20 años de experiencia brindando servicios de pintura y drywall de alta calidad. Tu satisfacción es nuestra prioridad.",
+    "cta": "Obtén Cotización Gratis",
+    "learnMore": "Conoce Más"
+  },
+  "services": {
+    "title": "Nuestros Servicios Profesionales",
+    "subtitle": "Soluciones integrales para todas tus necesidades de pintura y drywall",
+    "learnMore": "Más Información",
+    "drywall": {
+      "title": "Instalación y Reparación de Drywall",
+      "description": "Instalación experta de drywall nuevo y reparaciones perfectas para paredes existentes. Manejamos desde pequeños parches hasta instalaciones completas de habitaciones."
+    },
+    "popcorn": {
+      "title": "Eliminación de Techo de Palomitas",
+      "description": "Transforma techos de palomitas anticuados en superficies lisas y modernas. Eliminación segura con mínimo desorden e interrupción en tu hogar."
+    },
+    "cabinet": {
+      "title": "Renovación de Gabinetes",
+      "description": "Dale a tu cocina o baño una transformación impresionante con renovación profesional de gabinetes. Ahorra miles comparado con el reemplazo."
+    },
+    "power": {
+      "title": "Lavado a Presión",
+      "description": "Restaura las superficies exteriores de tu propiedad a condición como nueva con servicios profesionales de lavado a presión."
+    },
+    "texture": {
+      "title": "Aplicación de Textura",
+      "description": "Añade carácter y dimensión a tus paredes y techos con servicios profesionales de aplicación de textura."
+    },
+    "painting": {
+      "title": "Pintura Interior y Exterior",
+      "description": "Transforma cualquier espacio con nuestros servicios de pintura premium. Usamos pinturas de máxima calidad y técnicas meticulosas para resultados impecables."
+    }
+  },
+  "gallery": {
+    "title": "Nuestro Trabajo",
+    "viewAll": "Ver Todo"
+  },
+  "about": {
+    "title": "¿Por Qué Elegir Pro Touch?",
+    "description": "Con más de 25 años de experiencia en la industria de pintura y drywall, Pro Touch Painting & Drywall ha construido una reputación de excelencia, confiabilidad y artesanía excepcional. Nos enorgullecemos de transformar espacios y superar las expectativas de nuestros clientes en cada proyecto.",
+    "onTime": {
+      "title": "Finalización a Tiempo",
+      "description": "Respetamos tu tiempo y completamos proyectos según el cronograma"
+    },
+    "quality": {
+      "title": "Garantía de Calidad",
+      "description": "Garantía de satisfacción del 100% en todo nuestro trabajo"
+    },
+    "communication": {
+      "title": "Comunicación Clara",
+      "description": "Precios transparentes y actualizaciones regulares del proyecto"
+    },
+    "licensed": {
+      "title": "Licenciado y Asegurado",
+      "description": "Completamente licenciado, afianzado y asegurado para tu protección"
+    },
+    "stats": {
+      "yearsExperience": "Años de Experiencia",
+      "projectsCompleted": "Proyectos Completados",
+      "satisfactionRate": "Tasa de Satisfacción",
+      "starRating": "Calificación de Estrellas"
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Reseñas reales de clientes satisfechos",
+    "reviews": [
+      {
+        "text": "Nuestra HOA eligió Pro Touch Painting, y estamos extremadamente contentos de que lo hicieron. Nuestra casa fue terminada hoy, ¡y estamos muy impresionados! Más de 20 unidades en nuestra HOA están terminadas en este punto, y todas se ven geniales. Los vecinos con los que hemos hablado están muy complacidos. Jorge y el equipo son verdaderos profesionales - muy eficientes. El trabajo de preparación fue completo. La comunicación fue excelente, y sonreímos cada vez que uno del equipo cantaba una melodía. ¡Su experiencia se nota y se merecen cada una de las cinco estrellas!",
+        "author": "James B R",
+        "role": "Miembro de HOA"
+      },
+      {
+        "text": "¡¡¡EQUIPO INCREÍBLE!!! Es un negocio familiar y ¡los he usado por AÑOS! Hacen todas mis casas nuevas y no usaría otro pintor. ¡Jorge es genial! Capacidad de respuesta, Puntualidad, Calidad, Profesionalismo, Valor - ¡sobresalen en todo!",
+        "author": "Jorge Ruiz",
+        "role": "Constructor de Casas"
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para Transformar Tu Espacio?",
+    "description": "Obtén una consulta y cotización gratuita hoy. Hagamos realidad tu visión.",
+    "button": "Comenzar"
+  },
+  "contact": {
+    "title": "Obtén Tu Cotización Gratuita Hoy",
+    "subtitle": "Hablemos de tu proyecto y hagamos realidad tu visión",
+    "form": {
+      "name": "Nombre Completo *",
+      "email": "Dirección de Email *",
+      "phone": "Número de Teléfono *",
+      "service": "Servicio Necesario *",
+      "serviceSelect": "Selecciona un servicio",
+      "message": "Detalles del Proyecto",
+      "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+      "submit": "Obtener Cotización Gratis",
+      "submitting": "Enviando...",
+      "services": {
+        "painting": "Pintura Interior/Exterior",
+        "drywall": "Instalación/Reparación de Drywall",
+        "popcorn": "Eliminación de Techo de Palomitas",
+        "cabinet": "Renovación de Gabinetes",
+        "power": "Lavado a Presión",
+        "texture": "Aplicación de Textura",
+        "multiple": "Múltiples Servicios"
+      },
+      "alerts": {
+        "success": "¡Gracias por tu consulta! Te contactaremos pronto.",
+        "error": "Lo siento, hubo un error al enviar tu solicitud. Por favor intenta de nuevo."
+      }
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "phone": "Teléfono",
+      "email": "Email",
+      "hours": "Horarios",
+      "hoursDetail": "Lun-Vie: 7:00 AM - 6:00 PM<br/>Sáb: 8:00 AM - 4:00 PM<br/>Dom: Solo Servicios de Emergencia",
+      "serviceArea": "Área de Servicio",
+      "serviceAreaDetail": "Sirviendo el Área Metropolitana<br/>y Comunidades Circundantes",
+      "badges": {
+        "bbb": "Calificación BBB A+",
+        "insured": "Completamente Asegurado",
+        "licensed": "Profesional Licenciado"
+      }
+    }
+  },
+  "footer": {
+    "description": "Tu socio de confianza para servicios profesionales de pintura y drywall. Artesanía de calidad, satisfacción garantizada.",
+    "services": "Servicios",
+    "quickLinks": "Enlaces Rápidos",
+    "businessHours": "Horario de Atención",
+    "mondayFriday": "Lunes - Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo",
+    "emergencyOnly": "Solo Emergencias",
+    "emergencyService": "Servicio de Emergencia 24/7",
+    "rights": "Todos los derechos reservados",
+    "licensedInsured": "Licenciado y Asegurado",
+    "interiorPainting": "Pintura Interior",
+    "exteriorPainting": "Pintura Exterior",
+    "drywallServices": "Servicios de Drywall",
+    "cabinetRefinishing": "Renovación de Gabinetes",
+    "powerWashing": "Lavado a Presión",
+    "textureApplication": "Aplicación de Textura",
+    "home": "Inicio",
+    "aboutUs": "Nosotros",
+    "gallery": "Galería",
+    "reviews": "Reseñas",
+    "contact": "Contacto",
+    "freeQuote": "Cotización Gratis"
+  }
+}
