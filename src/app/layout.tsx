@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, Roboto } from 'next/font/google'
 import './globals.css'
+import I18nProvider from '@/components/I18nProvider'
 
 const poppins = Poppins({ 
   weight: ['300', '400', '500', '600', '700'],
@@ -36,8 +37,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable}`}>{children}</body>
+    <html lang="es">
+      <body className={`${poppins.variable} ${roboto.variable}`}>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
+      </body>
     </html>
   )
 }
