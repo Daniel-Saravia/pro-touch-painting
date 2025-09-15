@@ -56,11 +56,6 @@ export default function Header() {
               </button>
             </div>
             <div className={`${styles.mobileMenuOverlay} ${mobileMenuOpen ? styles.active : ''}`} onClick={handleOverlayClick}>
-              <div className={styles.overlayHeader}>
-                <div className={styles.overlayLogo} onClick={scrollToTop}>
-                  <Image src="/assets/ProTouchBLUE.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
-                </div>
-              </div>
             </div>
             <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
               <li><a href="#home" onClick={handleLinkClick}>{t('nav.home')}</a></li>
