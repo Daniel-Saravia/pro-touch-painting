@@ -40,7 +40,7 @@ export default function Header() {
         <div className="container">
           <div className={styles.navWrapper}>
             <div className={styles.logo} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-              <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
+              <Image src="/assets/ProTouchBLUE.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
             </div>
             <div className={styles.mobileNavControls}>
               <LanguageToggle />
@@ -58,7 +58,7 @@ export default function Header() {
             <div className={`${styles.mobileMenuOverlay} ${mobileMenuOpen ? styles.active : ''}`} onClick={handleOverlayClick}>
               <div className={styles.overlayHeader}>
                 <div className={styles.overlayLogo} onClick={scrollToTop}>
-                  <Image src="/assets/ProTouch.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
+                  <Image src="/assets/ProTouchBLUE.svg" alt="Pro Touch Painting & Drywall" width={150} height={50} priority />
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import { OrbitControls, useFBX } from '@react-three/drei'
 import * as THREE from 'three'
 
 function FBXModel({ isMobile, scale }: { isMobile: boolean, scale: number }) {
-  const fbx = useFBX('/assets/models/PROTOUCHYES.fbx')
+  const fbx = useFBX('/assets/models/PROTOUCH_SIMPLE.fbx')
   const meshRef = useRef<THREE.Group>(null)
   
   useFrame((state) => {
