@@ -5,26 +5,34 @@
     width: 100%;
     z-index: 1000;
     box-shadow: var(--shadow-md);
+    --logo-width: 150px;
+    --logo-height: 50px;
+    --nav-padding-y: 1rem;
+    --nav-padding-x: 0;
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: var(--nav-padding-y) var(--nav-padding-x);
 }
 
 .navWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1001;
 }
 
 .logo img {
-    width: 150px;
-    height: auto;
+    width: var(--logo-width);
+    height: var(--logo-height);
+    object-fit: contain;
 }
 
 .navMenu {
@@ -133,54 +141,37 @@
     width: 100%;
     height: 100vh;
     background-color: var(--charcoal);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top left;
     z-index: 998;
     pointer-events: none;
     opacity: 0;
+    transform: scaleY(0.98);
 }
 
 .mobileMenuOverlay.active {
     display: block;
     opacity: 1;
     pointer-events: all;
+    transform: scaleY(1);
 }
 
-.overlayHeader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: auto;
-    min-height: 80px;
-    box-sizing: border-box;
-}
-
-.overlayLogo {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.overlayLogo img {
-    width: 180px;
-    height: auto;
-    max-height: 60px;
-    object-fit: contain;
-}
 
 @media (max-width: 768px) {
-    .logo img {
-        width: 120px;
+    .header {
+        --logo-width: 120px;
+        --logo-height: 40px;
     }
-    
+
+    .logo {
+        z-index: 1002;
+    }
+
     .mobileNavControls {
         display: flex;
+        z-index: 1002;
     }
-    
+
     .mobileMenuToggle {
         z-index: 1002;
         min-width: 44px;
@@ -202,7 +193,7 @@
         text-align: center;
         transition: opacity 0.3s ease, transform 0.3s ease;
         box-shadow: none;
-        padding: 120px 1rem 1rem 1rem;
+        padding: calc(var(--logo-height) + (var(--nav-padding-y) * 2) + 2rem) 1rem 1rem 1rem;
         overflow-y: auto;
         align-items: center;
         justify-content: flex-start;
@@ -216,6 +207,16 @@
         opacity: 1;
         transform: scale(1);
         pointer-events: all;
+        animation: menuExpand 0.3s ease forwards;
+    }
+
+    @keyframes menuExpand {
+        from {
+            transform: scale(0.95);
+        }
+        to {
+            transform: scale(1);
+        }
     }
     
     
@@ -312,27 +313,12 @@
 }
 
 @media (max-width: 480px) {
-    .logo img {
-        width: 100px;
+    .header {
+        --logo-width: 100px;
+        --logo-height: 35px;
+        --nav-padding-y: 0.75rem;
     }
     
-    .navbar {
-        padding: 0.75rem 0;
-    }
-    
-    .overlayHeader {
-        min-height: 70px;
-        padding: 1.25rem 1rem;
-    }
-    
-    .overlayLogo img {
-        width: 160px;
-        max-height: 55px;
-    }
-    
-    .navMenu {
-        padding-top: 100px;
-    }
     
     .navMenu a {
         font-size: 1.1rem;
