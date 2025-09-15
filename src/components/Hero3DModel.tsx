@@ -12,7 +12,7 @@ function FBXModel({ isMobile, scale }: { isMobile: boolean, scale: number }) {
   useFrame((state) => {
     if (meshRef.current) {
       if (isMobile) {
-        meshRef.current.rotation.y += 0.005
+        meshRef.current.rotation.y += 0.007
       } else {
         const mouseX = state.pointer.x * 0.5
         const mouseY = state.pointer.y * 0.5
