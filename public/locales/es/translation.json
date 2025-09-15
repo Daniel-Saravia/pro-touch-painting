@@ -44,7 +44,8 @@
     }
   },
   "gallery": {
-    "title": "Nuestro Trabajo",
+    "title": "Galería de Nuestro Trabajo",
+    "subtitle": "Mira la calidad y artesanía en nuestros proyectos recientes",
     "viewAll": "Ver Todo"
   },
   "about": {
