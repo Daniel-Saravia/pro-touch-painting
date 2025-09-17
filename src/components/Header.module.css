@@ -71,15 +71,24 @@
 
 .ctaNav {
     background-color: var(--primary-orange);
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    color: var(--white) !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
     transition: all 0.3s ease;
 }
 
 .ctaNav:hover {
     background-color: var(--light-orange);
-    color: var(--charcoal) !important;
+    color: var(--white) !important;
     transform: translateY(-2px);
+}
+
+.mobileCtaFixed {
+    display: none;
 }
 
 .mobileNavControls {
@@ -126,12 +135,11 @@
     }
 }
 
-.languageToggleItem {
+.languageToggleDesktop {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 .mobileMenuOverlay {
     display: none;
@@ -180,6 +188,10 @@
         align-items: center;
         justify-content: center;
     }
+
+    .languageToggleDesktop {
+        display: none !important;
+    }
     
     .navMenu {
         position: fixed;
@@ -190,12 +202,12 @@
         width: 100%;
         max-width: 100%;
         height: 100vh;
-        text-align: center;
+        text-align: left;
         transition: opacity 0.3s ease, transform 0.3s ease;
         box-shadow: none;
-        padding: calc(var(--logo-height) + (var(--nav-padding-y) * 2) + 2rem) 1rem 1rem 1rem;
+        padding: calc(var(--logo-height) + (var(--nav-padding-y) * 2) + 2rem) 2rem 1rem 2rem;
         overflow-y: auto;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         z-index: 999;
         opacity: 0;
@@ -221,8 +233,8 @@
     
     
     .navMenu li {
-        padding: 0.25rem 0;
-        width: auto;
+        padding: 0.5rem 0;
+        width: 100%;
         animation: fadeInUp 0.4s ease forwards;
         opacity: 0;
     }
@@ -251,37 +263,37 @@
     
     .navMenu a {
         font-size: 1.25rem;
-        padding: 0.75rem 1.5rem;
-        display: inline-flex;
+        padding: 0.75rem 0;
+        display: flex;
         align-items: center;
-        text-align: center;
+        text-align: left;
         transition: all 0.2s ease;
         position: relative;
         min-height: 48px;
         color: var(--white);
         font-weight: 500;
         letter-spacing: 0.5px;
+        width: 100%;
     }
-    
+
     .navMenu a:hover {
         color: var(--primary-orange);
-        transform: scale(1.1);
+        transform: translateX(10px);
     }
-    
+
     .navMenu a::after {
         content: '';
         position: absolute;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 0;
+        left: 0;
         width: 0;
         height: 2px;
         background-color: var(--primary-orange);
         transition: width 0.3s ease;
     }
-    
+
     .navMenu a:hover::after {
-        width: 100%;
+        width: 50%;
     }
     
     .menuIcon {
@@ -292,23 +304,39 @@
     }
     
     .ctaNav {
-        margin: 1rem auto;
-        display: inline-flex !important;
+        display: none !important;
+    }
+
+    .mobileCtaFixed {
+        display: none;
         justify-content: center;
         text-align: center;
         background-color: var(--primary-orange);
-        border-radius: 30px;
-        font-weight: 600;
-        padding: 1rem 2.5rem !important;
+        color: var(--white) !important;
+        text-decoration: none;
+        border-radius: 9999px;
+        font-weight: 500;
+        padding: 0.75rem 2.5rem !important;
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        letter-spacing: -0.025em;
+        transition: all 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
     }
-    
-    .ctaNav:hover {
+
+    .mobileCtaFixed.active {
+        display: inline-flex !important;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .mobileCtaFixed:hover {
         background-color: var(--light-orange);
-        transform: scale(1.1);
-    }
-    
-    .ctaNav:hover::after {
-        display: none;
+        transform: translateX(-50%) translateY(-2px);
     }
 }
 
@@ -322,7 +350,7 @@
     
     .navMenu a {
         font-size: 1.1rem;
-        padding: 0.6rem 1.2rem;
+        padding: 0.6rem 0;
     }
     
     .menuIcon {

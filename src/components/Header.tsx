@@ -58,17 +58,18 @@ export default function Header() {
             <div className={`${styles.mobileMenuOverlay} ${mobileMenuOpen ? styles.active : ''}`} onClick={handleOverlayClick}>
             </div>
             <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
+              <li className={styles.languageToggleDesktop}><LanguageToggle /></li>
               <li><a href="#home" onClick={handleLinkClick}>{t('nav.home')}</a></li>
               <li><a href="#services" onClick={handleLinkClick}>{t('nav.services')}</a></li>
               <li><a href="#gallery" onClick={handleLinkClick}>{t('nav.gallery')}</a></li>
               <li><a href="#about" onClick={handleLinkClick}>{t('nav.about')}</a></li>
               <li><a href="#testimonials" onClick={handleLinkClick}>{t('nav.testimonials')}</a></li>
               <li><a href="#contact" className={styles.ctaNav} onClick={handleLinkClick}>{t('nav.getQuote')}</a></li>
-              <li className={styles.languageToggleItem}><LanguageToggle /></li>
             </ul>
           </div>
         </div>
       </nav>
+      <a href="#contact" className={`${styles.mobileCtaFixed} ${mobileMenuOpen ? styles.active : ''}`} onClick={handleLinkClick}>{t('nav.getQuote')}</a>
     </header>
   )
 }
