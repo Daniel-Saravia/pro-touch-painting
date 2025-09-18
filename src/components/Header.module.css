@@ -50,10 +50,6 @@
     position: relative;
 }
 
-.navMenu a:hover {
-    color: var(--light-orange);
-}
-
 .navMenu a::after {
     content: '';
     position: absolute;
@@ -65,8 +61,14 @@
     transition: width 0.3s ease;
 }
 
-.navMenu a:hover::after {
-    width: 100%;
+@media (hover: hover) {
+    .navMenu a:hover {
+        color: var(--light-orange);
+    }
+
+    .navMenu a:hover::after {
+        width: 100%;
+    }
 }
 
 .ctaNav {
@@ -81,10 +83,12 @@
     transition: all 0.3s ease;
 }
 
-.ctaNav:hover {
-    background-color: var(--light-orange);
-    color: var(--white) !important;
-    transform: translateY(-2px);
+@media (hover: hover) {
+    .ctaNav:hover {
+        background-color: var(--light-orange);
+        color: var(--white) !important;
+        transform: translateY(-2px);
+    }
 }
 
 .mobileCtaFixed {
@@ -247,9 +251,15 @@
         animation: none !important;
     }
 
-    .navMenu a:hover {
-        color: var(--primary-orange);
-        transform: translateX(10px);
+    @media (hover: hover) {
+        .navMenu a:hover {
+            color: var(--primary-orange);
+            transform: translateX(10px);
+        }
+
+        .navMenu a:hover::after {
+            width: 50%;
+        }
     }
 
     .navMenu a::after {
@@ -260,10 +270,6 @@
         width: 0;
         height: 2px;
         background-color: var(--primary-orange);
-    }
-
-    .navMenu a:hover::after {
-        width: 50%;
     }
     
     .menuIcon {
@@ -303,9 +309,11 @@
         pointer-events: all;
     }
 
-    .mobileCtaFixed:hover {
-        background-color: var(--light-orange);
-        transform: translateX(-50%) translateY(-2px);
+    @media (hover: hover) {
+        .mobileCtaFixed:hover {
+            background-color: var(--light-orange);
+            transform: translateX(-50%) translateY(-2px);
+        }
     }
 }
 
