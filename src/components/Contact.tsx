@@ -157,7 +157,7 @@ export default function Contact() {
                 </svg>
                 <div>
                   <strong>{t('contact.info.email')}</strong>
-                  <p>info@protouchpainting.com</p>
+                  <p>jorgeruizpaint@yahoo.com</p>
                 </div>
               </div>
               <div className={styles.infoItem}>
