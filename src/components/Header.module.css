@@ -221,8 +221,8 @@
         content: '';
         position: absolute;
         top: calc(var(--logo-height) + (var(--nav-padding-y) * 2));
-        right: 2rem;
-        width: min(60%, 260px);
+        right: 1rem;
+        width: min(80%, 340px);
         aspect-ratio: 617 / 897;
         background-image: url('/assets/Touch_Logo_Rendered.png');
         background-repeat: no-repeat;
@@ -239,7 +239,7 @@
     }
 
     .navMenu.active::before {
-        opacity: 0.18;
+        opacity: 1;
     }
     
     
@@ -271,6 +271,7 @@
         width: 100%;
         transition: none !important;
         animation: none !important;
+        z-index: 1;
     }
 
     @media (hover: hover) {
