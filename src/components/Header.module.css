@@ -107,7 +107,7 @@
 }
 
 .mobileMenuToggle span {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background-color: var(--white);
     margin: 3px 0;
@@ -220,7 +220,7 @@
     
     
     .navMenu li {
-        padding: 0.5rem 0;
+        padding: 0;
         width: 100%;
         opacity: 0;
         transition: none !important;
@@ -232,38 +232,26 @@
     }
     
     .navMenu a {
-        font-size: 1.25rem;
-        padding: 0.75rem 0;
+        font-size: 1.375rem;
+        padding: 1rem 1.5rem;
         display: flex;
         align-items: center;
         text-align: left;
         position: relative;
-        min-height: 48px;
+        min-height: 56px;
         color: var(--white);
         font-weight: 500;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.25px;
         width: 100%;
         transition: none !important;
         animation: none !important;
+        border-left: 3px solid transparent;
     }
 
-    .navMenu a:hover {
+    .navMenu a:active {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-left-color: var(--primary-orange);
         color: var(--primary-orange);
-        transform: translateX(10px);
-    }
-
-    .navMenu a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--primary-orange);
-    }
-
-    .navMenu a:hover::after {
-        width: 50%;
     }
     
     .menuIcon {
@@ -285,16 +273,23 @@
         color: var(--white) !important;
         text-decoration: none;
         border-radius: 9999px;
-        font-weight: 500;
-        padding: 0.75rem 2.5rem !important;
+        font-weight: 600;
+        font-size: 1.125rem;
+        padding: 1rem 3rem !important;
         position: fixed;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+        width: calc(100% - 2rem);
+        max-width: 400px;
+        margin: 0 auto;
+        transform: none;
         z-index: 1000;
         letter-spacing: -0.025em;
         opacity: 0;
         pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .mobileCtaFixed.active {
@@ -303,9 +298,9 @@
         pointer-events: all;
     }
 
-    .mobileCtaFixed:hover {
+    .mobileCtaFixed:active {
         background-color: var(--light-orange);
-        transform: translateX(-50%) translateY(-2px);
+        transform: scale(0.98);
     }
 }
 
@@ -318,8 +313,8 @@
     
     
     .navMenu a {
-        font-size: 1.1rem;
-        padding: 0.6rem 0;
+        font-size: 1.25rem;
+        padding: 0.875rem 1.25rem;
     }
     
     .menuIcon {
