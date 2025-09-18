@@ -214,12 +214,32 @@
         pointer-events: none;
         transition: none !important;
         animation: none !important;
+        isolation: isolate;
     }
-    
+
+    .navMenu::before {
+        content: '';
+        position: absolute;
+        top: calc(var(--logo-height) + (var(--nav-padding-y) * 2));
+        right: 2rem;
+        width: min(60%, 260px);
+        aspect-ratio: 617 / 897;
+        background-image: url('/assets/Touch_Logo_Rendered.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
     .navMenu.active {
         opacity: 1;
         transform: scale(1);
         pointer-events: all;
+    }
+
+    .navMenu.active::before {
+        opacity: 0.18;
     }
     
     
@@ -229,6 +249,8 @@
         opacity: 0;
         transition: none !important;
         animation: none !important;
+        position: relative;
+        z-index: 1;
     }
 
     .navMenu.active li {
