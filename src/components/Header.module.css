@@ -149,19 +149,15 @@
     width: 100%;
     height: 100vh;
     background-color: var(--charcoal);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    transform-origin: top left;
     z-index: 998;
     pointer-events: none;
     opacity: 0;
-    transform: scaleY(0.98);
 }
 
 .mobileMenuOverlay.active {
     display: block;
     opacity: 1;
     pointer-events: all;
-    transform: scaleY(1);
 }
 
 
@@ -203,7 +199,6 @@
         max-width: 100%;
         height: 100vh;
         text-align: left;
-        transition: opacity 0.3s ease, transform 0.3s ease;
         box-shadow: none;
         padding: calc(var(--logo-height) + (var(--nav-padding-y) * 2) + 2rem) 2rem 1rem 2rem;
         overflow-y: auto;
@@ -213,52 +208,27 @@
         opacity: 0;
         transform: scale(0.95);
         pointer-events: none;
+        transition: none !important;
+        animation: none !important;
     }
     
     .navMenu.active {
         opacity: 1;
         transform: scale(1);
         pointer-events: all;
-        animation: menuExpand 0.3s ease forwards;
-    }
-
-    @keyframes menuExpand {
-        from {
-            transform: scale(0.95);
-        }
-        to {
-            transform: scale(1);
-        }
     }
     
     
     .navMenu li {
         padding: 0.5rem 0;
         width: 100%;
-        animation: fadeInUp 0.4s ease forwards;
         opacity: 0;
+        transition: none !important;
+        animation: none !important;
     }
-    
+
     .navMenu.active li {
         opacity: 1;
-    }
-    
-    .navMenu li:nth-child(1) { animation-delay: 0.1s; }
-    .navMenu li:nth-child(2) { animation-delay: 0.15s; }
-    .navMenu li:nth-child(3) { animation-delay: 0.2s; }
-    .navMenu li:nth-child(4) { animation-delay: 0.25s; }
-    .navMenu li:nth-child(5) { animation-delay: 0.3s; }
-    .navMenu li:nth-child(6) { animation-delay: 0.35s; }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
     
     .navMenu a {
@@ -267,13 +237,14 @@
         display: flex;
         align-items: center;
         text-align: left;
-        transition: all 0.2s ease;
         position: relative;
         min-height: 48px;
         color: var(--white);
         font-weight: 500;
         letter-spacing: 0.5px;
         width: 100%;
+        transition: none !important;
+        animation: none !important;
     }
 
     .navMenu a:hover {
@@ -289,7 +260,6 @@
         width: 0;
         height: 2px;
         background-color: var(--primary-orange);
-        transition: width 0.3s ease;
     }
 
     .navMenu a:hover::after {
@@ -323,7 +293,6 @@
         transform: translateX(-50%);
         z-index: 1000;
         letter-spacing: -0.025em;
-        transition: all 0.3s ease;
         opacity: 0;
         pointer-events: none;
     }
