@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslation } from 'react-i18next'
+import Image from 'next/image'
 import styles from './Gallery.module.css'
 
 const galleryItems = [
@@ -54,10 +55,13 @@ export default function Gallery() {
             {galleryItems.map(item => (
               <div key={item.id} className={styles.galleryItem}>
                 <div className={styles.imageContainer}>
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
+                    width={400}
+                    height={300}
                     className={styles.galleryImage}
+                    loading="lazy"
                   />
                 </div>
                 <h4>{item.title}</h4>
@@ -81,10 +85,13 @@ export default function Gallery() {
           {galleryItems.map(item => (
             <div key={item.id} className={styles.galleryItem}>
               <div className={styles.imageContainer}>
-                <img
+                <Image
                   src={item.image}
                   alt={isSpanish ? item.titleEs : item.title}
+                  width={400}
+                  height={300}
                   className={styles.galleryImage}
+                  loading="lazy"
                 />
               </div>
               <h4>{isSpanish ? item.titleEs : item.title}</h4>

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Resend } from 'resend'
-import twilio from 'twilio'
+const twilio = require('twilio')
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
