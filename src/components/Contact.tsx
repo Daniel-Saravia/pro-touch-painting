@@ -117,7 +117,9 @@ export default function Contact() {
                     <option value="popcorn">{t('contact.form.services.popcorn')}</option>
                     <option value="cabinet">{t('contact.form.services.cabinet')}</option>
                     <option value="power">{t('contact.form.services.power')}</option>
+                    <option value="epoxy">{t('contact.form.services.epoxy')}</option>
                     <option value="texture">{t('contact.form.services.texture')}</option>
+                    <option value="hoa">{t('contact.form.services.hoa')}</option>
                     <option value="multiple">{t('contact.form.services.multiple')}</option>
                   </select>
                 </div>

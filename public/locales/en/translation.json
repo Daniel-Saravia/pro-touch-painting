@@ -10,13 +10,13 @@
   "hero": {
     "title": "Transform Your Space with Pro Touch",
     "subtitle": "Professional Painting & Drywall",
-    "description": "Over 20 years of experience delivering high-quality painting and drywall services. Your satisfaction is our priority.",
+    "description": "Over 20 years of experience delivering high-quality painting and drywall services to residential, commercial, and HOA clients. Your satisfaction is our priority.",
     "cta": "Get Free Quote",
     "learnMore": "Learn More"
   },
   "services": {
     "title": "Our Professional Services",
-    "subtitle": "Comprehensive solutions for all your painting and drywall needs",
+    "subtitle": "Comprehensive solutions for residential, commercial, and HOA painting and drywall needs",
     "learnMore": "Learn More",
     "drywall": {
       "title": "Drywall Installation & Repair",
@@ -34,13 +34,17 @@
       "title": "Power Washing",
       "description": "Restore your property's exterior surfaces to like-new condition with professional power washing services."
     },
+    "epoxy": {
+      "title": "Epoxy Garage Floors",
+      "description": "Transform your garage with durable, beautiful epoxy flooring. Choose from a variety of decorative chip styles and gradient patterns for a custom look."
+    },
     "texture": {
       "title": "Texture Application",
       "description": "Add character and dimension to your walls and ceilings with professional texture application services."
     },
     "painting": {
       "title": "Interior & Exterior Painting",
-      "description": "Transform any space with our premium painting services. We use top-quality paints and meticulous techniques for flawless results."
+      "description": "Transform any space with our premium painting services. Specializing in residential homes, commercial properties, and HOA communities, we use top-quality paints and meticulous techniques for flawless results."
     }
   },
   "gallery": {
@@ -50,7 +54,7 @@
   },
   "about": {
     "title": "Why Choose Pro Touch?",
-    "description": "With over 25 years of experience in the painting and drywall industry, Pro Touch Painting & Drywall has built a reputation for excellence, reliability, and exceptional craftsmanship. We take pride in transforming spaces and exceeding our clients' expectations on every project.",
+    "description": "With over 25 years of experience in the painting and drywall industry, Pro Touch Painting & Drywall has built a reputation for excellence, reliability, and exceptional craftsmanship. As a trusted HOA contractor, we take pride in transforming residential, commercial, and community spaces while exceeding our clients' expectations on every project.",
     "onTime": {
       "title": "On-Time Completion",
       "description": "We respect your time and complete projects on schedule"
@@ -114,7 +118,9 @@
         "popcorn": "Popcorn Ceiling Removal",
         "cabinet": "Cabinet Refinishing",
         "power": "Power Washing",
+        "epoxy": "Epoxy Garage Floors",
         "texture": "Texture Application",
+        "hoa": "HOA Community Projects",
         "multiple": "Multiple Services"
       },
       "alerts": {

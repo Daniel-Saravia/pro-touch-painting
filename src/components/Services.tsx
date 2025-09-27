@@ -84,6 +84,26 @@ export default function Services() {
     },
     {
       id: 5,
+      key: 'epoxy',
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 3h18v18H3z"></path>
+          <rect x="7" y="7" width="3" height="3"></rect>
+          <rect x="14" y="7" width="3" height="3"></rect>
+          <rect x="7" y="14" width="3" height="3"></rect>
+          <rect x="14" y="14" width="3" height="3"></rect>
+        </svg>
+      ),
+      image: "/assets/chips.png",
+      features: [
+        "Multiple chip color combinations",
+        "Gradient and solid color options",
+        "Chemical and stain resistant",
+        "Easy to clean and maintain"
+      ]
+    },
+    {
+      id: 6,
       key: 'texture',
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -103,7 +123,7 @@ export default function Services() {
       ]
     },
     {
-      id: 6,
+      id: 7,
       key: 'painting',
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

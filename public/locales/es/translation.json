@@ -10,13 +10,13 @@
   "hero": {
     "title": "Transforma Tu Espacio con Pro Touch",
     "subtitle": "Pintura y Drywall Profesional",
-    "description": "Más de 20 años de experiencia brindando servicios de pintura y drywall de alta calidad. Tu satisfacción es nuestra prioridad.",
+    "description": "Más de 20 años de experiencia brindando servicios de pintura y drywall de alta calidad a clientes residenciales, comerciales y HOA. Tu satisfacción es nuestra prioridad.",
     "cta": "Obtén Cotización Gratis",
     "learnMore": "Conoce Más"
   },
   "services": {
     "title": "Nuestros Servicios Profesionales",
-    "subtitle": "Soluciones integrales para todas tus necesidades de pintura y drywall",
+    "subtitle": "Soluciones integrales para necesidades residenciales, comerciales y HOA de pintura y drywall",
     "learnMore": "Más Información",
     "drywall": {
       "title": "Instalación y Reparación de Drywall",
@@ -34,13 +34,17 @@
       "title": "Lavado a Presión",
       "description": "Restaura las superficies exteriores de tu propiedad a condición como nueva con servicios profesionales de lavado a presión."
     },
+    "epoxy": {
+      "title": "Pisos de Epoxy para Garaje",
+      "description": "Transforma tu garaje con pisos de epoxy duraderos y hermosos. Elige entre una variedad de estilos decorativos de chips y patrones de gradiente para un look personalizado."
+    },
     "texture": {
       "title": "Aplicación de Textura",
       "description": "Añade carácter y dimensión a tus paredes y techos con servicios profesionales de aplicación de textura."
     },
     "painting": {
       "title": "Pintura Interior y Exterior",
-      "description": "Transforma cualquier espacio con nuestros servicios de pintura premium. Usamos pinturas de máxima calidad y técnicas meticulosas para resultados impecables."
+      "description": "Transforma cualquier espacio con nuestros servicios de pintura premium. Especializándonos en hogares residenciales, propiedades comerciales y comunidades HOA, usamos pinturas de máxima calidad y técnicas meticulosas para resultados impecables."
     }
   },
   "gallery": {
@@ -50,7 +54,7 @@
   },
   "about": {
     "title": "¿Por Qué Elegir Pro Touch?",
-    "description": "Con más de 25 años de experiencia en la industria de pintura y drywall, Pro Touch Painting & Drywall ha construido una reputación de excelencia, confiabilidad y artesanía excepcional. Nos enorgullecemos de transformar espacios y superar las expectativas de nuestros clientes en cada proyecto.",
+    "description": "Con más de 25 años de experiencia en la industria de pintura y drywall, Pro Touch Painting & Drywall ha construido una reputación de excelencia, confiabilidad y artesanía excepcional. Como contratista HOA de confianza, nos enorgullecemos de transformar espacios residenciales, comerciales y comunitarios superando las expectativas de nuestros clientes en cada proyecto.",
     "onTime": {
       "title": "Finalización a Tiempo",
       "description": "Respetamos tu tiempo y completamos proyectos según el cronograma"
@@ -114,7 +118,9 @@
         "popcorn": "Eliminación de Techo de Palomitas",
         "cabinet": "Renovación de Gabinetes",
         "power": "Lavado a Presión",
+        "epoxy": "Pisos de Epoxy para Garaje",
         "texture": "Aplicación de Textura",
+        "hoa": "Proyectos de Comunidad HOA",
         "multiple": "Múltiples Servicios"
       },
       "alerts": {
