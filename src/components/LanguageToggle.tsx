@@ -56,9 +56,9 @@ export default function LanguageToggle() {
       aria-label="Toggle language"
     >
       <div className={styles.flagContainer}>
-        {i18n.language === 'es' ? <USAFlag /> : <MexicoFlag />}
+        {i18n.language === 'es' ? <MexicoFlag /> : <USAFlag />}
         <span className={styles.langText}>
-          {i18n.language === 'es' ? 'EN' : 'ES'}
+          {i18n.language === 'es' ? 'ES' : 'EN'}
         </span>
       </div>
     </button>

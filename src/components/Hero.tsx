@@ -14,7 +14,10 @@ export default function Hero() {
     <section id="home" className={styles.hero}>
       <div className={styles.heroOverlay}></div>
       <Hero3DModel />
-      <div className="container">
+      <div className={styles.phoneNumber}>
+        <a href="tel:6026807263" className={styles.phoneLink}>
+          602-680-7263
+        </a>
       </div>
     </section>
   )
