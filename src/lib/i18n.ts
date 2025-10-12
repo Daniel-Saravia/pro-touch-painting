@@ -6,8 +6,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'es',
-    lng: 'es',
+    fallbackLng: 'en',
+    lng: 'en',
     debug: false,
     
     interpolation: {
@@ -17,7 +17,8 @@ i18n
     resources: {},
     
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['querystring', 'localStorage', 'navigator'],
+      lookupQuerystring: 'lang',
       caches: ['localStorage']
     }
   });

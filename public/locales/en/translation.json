@@ -8,68 +8,110 @@
     "getQuote": "Get Quote"
   },
   "hero": {
-    "title": "Transform Your Space with Pro Touch",
-    "subtitle": "Professional Painting & Drywall",
-    "description": "Over 20 years of experience delivering high-quality painting and drywall services to residential, commercial, and HOA clients. Your satisfaction is our priority.",
+    "title": "Phoenix Painting & Drywall Experts",
+    "subtitle": "Serving Phoenix, Scottsdale & the Greater Valley",
+    "description": "Pro Touch Painting & Drywall delivers top-rated painting, drywall repair, and finishing services for Phoenix homeowners, builders, commercial properties, and HOA communities. Count on licensed professionals for flawless results throughout Maricopa County.",
     "cta": "Get Free Quote",
     "learnMore": "Learn More"
   },
   "services": {
-    "title": "Our Professional Services",
-    "subtitle": "Comprehensive solutions for residential, commercial, and HOA painting and drywall needs",
+    "title": "Phoenix Painting & Drywall Services",
+    "subtitle": "Licensed painters and drywall specialists trusted in Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and surrounding cities",
     "learnMore": "Learn More",
     "drywall": {
       "title": "Drywall Installation & Repair",
-      "description": "Expert installation of new drywall and seamless repairs for existing walls. We handle everything from small patches to complete room installations."
+      "description": "Precision drywall hanging, finishing, and wall repair for Phoenix renovations, remodels, and new construction projects.",
+      "features": [
+        "Drywall installation for Phoenix home additions and tenant improvements",
+        "Crack, hole, and water-damage drywall repair with smooth finishes",
+        "Level 5 drywall finishing and texture matching anywhere in the Valley",
+        "Dust-controlled drywall sanding safe for occupied spaces"
+      ]
     },
     "popcorn": {
       "title": "Popcorn Ceiling Removal",
-      "description": "Transform outdated popcorn ceilings into smooth, modern surfaces. Safe removal with minimal mess and disruption to your home."
+      "description": "Transform outdated ceilings with professional popcorn texture removal and fresh finishing tailored to Phoenix homes and condos.",
+      "features": [
+        "Asbestos testing coordination for older Phoenix properties",
+        "Clean, contained popcorn ceiling removal to protect your interiors",
+        "Smooth ceiling resurfacing with modern knockdown or orange peel textures",
+        "Painting and finishing crews ready for fast move-in timelines"
+      ]
     },
     "cabinet": {
       "title": "Cabinet Refinishing",
-      "description": "Give your kitchen or bathroom a stunning makeover with professional cabinet refinishing. Save thousands compared to replacement."
+      "description": "Revitalize kitchens, bathrooms, and built-ins with showroom-quality cabinet painting and refinishing across the Phoenix metro.",
+      "features": [
+        "Color consultations to match Phoenix Valley design trends",
+        "Factory-grade spraying in controlled environments for durability",
+        "Eco-friendly coatings that withstand Arizona heat and humidity",
+        "Hardware updates and soft-close upgrades available"
+      ]
     },
     "power": {
       "title": "Power Washing",
-      "description": "Restore your property's exterior surfaces to like-new condition with professional power washing services."
+      "description": "Restore curb appeal with exterior pressure washing services for stucco, masonry, concrete, and outdoor living spaces.",
+      "features": [
+        "Pre-paint power washing for Phoenix stucco and block homes",
+        "Driveway, sidewalk, and garage floor cleaning that lifts stains",
+        "Pool deck and patio washing to remove desert dust and buildup",
+        "Gentle soft-wash options for HOA entry monuments and signage"
+      ]
     },
     "epoxy": {
       "title": "Epoxy Garage Floors",
-      "description": "Transform your garage with durable, beautiful epoxy flooring. Choose from a variety of decorative chip styles and gradient patterns for a custom look."
+      "description": "Install long-lasting, decorative epoxy flooring that resists Arizona heat and delivers showroom-ready garage spaces.",
+      "features": [
+        "Full-broadcast flake systems popular in Phoenix luxury homes",
+        "UV-stable topcoats engineered for the Arizona climate",
+        "Slip-resistant options for garages, shops, and commercial bays",
+        "Next-day return-to-service schedules for busy homeowners"
+      ]
     },
     "texture": {
       "title": "Texture Application",
-      "description": "Add character and dimension to your walls and ceilings with professional texture application services."
+      "description": "Match or refresh interior wall and ceiling textures with expert finishers experienced in Phoenix architectural styles.",
+      "features": [
+        "Orange peel, knockdown, skip trowel, and Santa Fe texture expertise",
+        "Texture blending for repairs after plumbing or electrical work",
+        "Custom decorative finishes that elevate Valley luxury homes",
+        "Fast turnarounds for property managers and real estate listings"
+      ]
     },
     "painting": {
       "title": "Interior & Exterior Painting",
-      "description": "Transform any space with our premium painting services. Specializing in residential homes, commercial properties, and HOA communities, we use top-quality paints and meticulous techniques for flawless results."
+      "description": "Premium interior and exterior painting for residences, businesses, and HOA communities across Phoenix and the East Valley.",
+      "features": [
+        "Detailed prep, masking, and protection for occupied properties",
+        "Sherwin-Williams and Dunn-Edwards paint systems built for desert sun",
+        "Color consulting calibrated to Phoenix lighting and design trends",
+        "HOA compliance experts for Scottsdale, Chandler, and Gilbert communities"
+      ]
     }
   },
   "gallery": {
-    "title": "Our Work Gallery",
-    "subtitle": "See the quality and craftsmanship in our recent projects",
+    "title": "Phoenix Project Gallery",
+    "subtitle": "Browse our recent painting and drywall transformations throughout the Valley",
     "viewAll": "View All"
   },
   "about": {
     "title": "Why Choose Pro Touch?",
-    "description": "With over 25 years of experience in the painting and drywall industry, Pro Touch Painting & Drywall has built a reputation for excellence, reliability, and exceptional craftsmanship. As a trusted HOA contractor, we take pride in transforming residential, commercial, and community spaces while exceeding our clients' expectations on every project.",
+    "description": "For more than 25 years, Phoenix homeowners, custom builders, and HOA boards have trusted Pro Touch Painting & Drywall for meticulous prep work, reliable timelines, and premium finishes. Our licensed, bonded, and insured team delivers consistent results across Maricopa County.",
     "onTime": {
       "title": "On-Time Completion",
-      "description": "We respect your time and complete projects on schedule"
+      "description": "Scheduling built around your Phoenix project timeline"
     },
     "quality": {
       "title": "Quality Guarantee",
-      "description": "100% satisfaction guarantee on all our work"
+      "description": "Workmanship warranty backed by top-tier materials"
     },
     "communication": {
       "title": "Clear Communication",
-      "description": "Transparent pricing and regular project updates"
+      "description": "Dedicated project management with proactive updates"
     },
     "licensed": {
       "title": "Licensed & Insured",
-      "description": "Fully licensed, bonded, and insured for your protection"
+      "description": "ROC-licensed painters and drywall pros serving all of Arizona"
     },
     "stats": {
       "yearsExperience": "Years Experience",
@@ -80,7 +122,7 @@
   },
   "testimonials": {
     "title": "What Our Clients Say",
-    "subtitle": "Real reviews from satisfied customers",
+    "subtitle": "Real reviews from Phoenix homeowners, HOA boards, and builders",
     "reviews": [
       {
         "text": "Our HOA chose Pro Touch Painting, and we are extremely happy they did. Our house was finished today, and we are so impressed! Over 20 units in our HOA are finished at this point, and they are all looking great. The neighbors we have talked to are very pleased. Jorge and the crew are true pros - very efficient. Prep work was thorough. Communication was excellent, and we smiled whenever one of the crew would sing a tune. ¡Su experiencia se nota y se merecen cada una de las cinco estrellas!",
@@ -95,13 +137,13 @@
     ]
   },
   "cta": {
-    "title": "Ready to Transform Your Space?",
-    "description": "Get a free consultation and quote today. Let's bring your vision to life.",
+    "title": "Ready to Refresh Your Phoenix Property?",
+    "description": "Schedule your free on-site estimate for painting, drywall, or epoxy flooring anywhere in the Phoenix metro.",
     "button": "Get Started"
   },
   "contact": {
-    "title": "Get Your Free Quote Today",
-    "subtitle": "Let's discuss your project and bring your vision to life",
+    "title": "Request Your Phoenix Painting Quote",
+    "subtitle": "Tell us about your project and receive a detailed proposal fast",
     "form": {
       "name": "Full Name *",
       "email": "Email Address *",
@@ -109,7 +151,7 @@
       "service": "Service Needed *",
       "serviceSelect": "Select a service",
       "message": "Project Details",
-      "messagePlaceholder": "Tell us about your project...",
+      "messagePlaceholder": "Share the property type, neighborhood, and desired timeline...",
       "submit": "Get Free Quote",
       "submitting": "Submitting...",
       "services": {
@@ -135,7 +177,7 @@
       "hours": "Hours",
       "hoursDetail": "Mon-Fri: 7:00 AM - 6:00 PM<br/>Sat: 8:00 AM - 4:00 PM<br/>Sun: Emergency Services Only",
       "serviceArea": "Service Area",
-      "serviceAreaDetail": "Serving the Greater Metro Area<br/>and Surrounding Communities",
+      "serviceAreaDetail": "Serving Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria & Paradise Valley",
       "badges": {
         "bbb": "BBB A+ Rating",
         "insured": "Fully Insured",
@@ -144,7 +186,7 @@
     }
   },
   "footer": {
-    "description": "Your trusted partner for professional painting and drywall services. Quality craftsmanship, guaranteed satisfaction.",
+    "description": "Phoenix’s trusted partner for painting, drywall, cabinet refinishing, and epoxy flooring. Proudly serving the entire Valley with licensed, insured professionals.",
     "services": "Services",
     "quickLinks": "Quick Links",
     "businessHours": "Business Hours",

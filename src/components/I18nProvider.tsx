@@ -10,15 +10,26 @@ export default function I18nProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     const loadTranslations = async () => {
       try {
-        const esTranslations = await fetch('/locales/es/translation.json').then(res => res.json());
-        const enTranslations = await fetch('/locales/en/translation.json').then(res => res.json());
-        
+        const [esTranslations, enTranslations] = await Promise.all([
+          fetch('/locales/es/translation.json').then(res => res.json()),
+          fetch('/locales/en/translation.json').then(res => res.json())
+        ]);
+
         i18n.addResourceBundle('es', 'translation', esTranslations, true, true);
         i18n.addResourceBundle('en', 'translation', enTranslations, true, true);
-        
-        const savedLanguage = localStorage.getItem('i18nextLng') || 'es';
-        await i18n.changeLanguage(savedLanguage);
-        
+
+        const url = new URL(window.location.href);
+        const paramLanguage = url.searchParams.get('lang') || url.searchParams.get('lng');
+        const storedLanguage = localStorage.getItem('i18nextLng');
+        const preferredLanguage = (paramLanguage && ['en', 'es'].includes(paramLanguage)) ? paramLanguage : storedLanguage;
+        const initialLanguage = preferredLanguage || 'en';
+
+        await i18n.changeLanguage(initialLanguage);
+        document.documentElement.setAttribute('lang', initialLanguage);
+        localStorage.setItem('i18nextLng', initialLanguage);
+        url.searchParams.set('lang', initialLanguage);
+        window.history.replaceState({}, '', url.toString());
+
         setIsLoading(false);
       } catch (error) {
         console.error('Error loading translations:', error);
@@ -27,6 +38,26 @@ export default function I18nProvider({ children }: { children: React.ReactNode }
     };
 
     loadTranslations();
+  }, []);
+
+  useEffect(() => {
+    const handleLanguageChange = (lng: string) => {
+      if (!['en', 'es'].includes(lng)) {
+        return;
+      }
+      document.documentElement.setAttribute('lang', lng);
+      localStorage.setItem('i18nextLng', lng);
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lng);
+      window.history.replaceState({}, '', url.toString());
+    };
+
+    i18n.on('languageChanged', handleLanguageChange);
+    handleLanguageChange(i18n.language);
+
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
   }, []);
 
   if (isLoading) {
