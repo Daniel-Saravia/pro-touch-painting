@@ -19,13 +19,7 @@ export default function Services() {
           <line x1="9" y1="17" x2="15" y2="17"></line>
         </svg>
       ),
-      image: "/assets/drywall.avif",
-      features: [
-        "New construction drywall",
-        "Damage repair & patching",
-        "Seamless finishing",
-        "Water damage restoration"
-      ]
+      image: "/assets/drywall.avif"
     },
     {
       id: 2,
@@ -36,13 +30,7 @@ export default function Services() {
           <path d="M9 22V12h6v10"></path>
         </svg>
       ),
-      image: "/assets/popcorn.avif",
-      features: [
-        "Safe asbestos testing",
-        "Clean removal process",
-        "Smooth ceiling finishing",
-        "Modern texture options"
-      ]
+      image: "/assets/popcorn.avif"
     },
     {
       id: 3,
@@ -53,13 +41,7 @@ export default function Services() {
           <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path>
         </svg>
       ),
-      image: "/assets/cabinet.avif",
-      features: [
-        "Complete color changes",
-        "Professional spray finishing",
-        "Hardware updates",
-        "Same-day completion available"
-      ]
+      image: "/assets/cabinet.avif"
     },
     {
       id: 4,
@@ -74,13 +56,7 @@ export default function Services() {
           <line x1="12" y1="22.08" x2="12" y2="12"></line>
         </svg>
       ),
-      image: "/assets/Power-Washing-Your-Driveway.avif",
-      features: [
-        "House exterior cleaning",
-        "Driveway & sidewalk restoration",
-        "Deck & fence cleaning",
-        "Pre-paint surface preparation"
-      ]
+      image: "/assets/Power-Washing-Your-Driveway.avif"
     },
     {
       id: 5,
@@ -94,13 +70,7 @@ export default function Services() {
           <rect x="14" y="14" width="3" height="3"></rect>
         </svg>
       ),
-      image: "/assets/chips.png",
-      features: [
-        "Multiple chip color combinations",
-        "Gradient and solid color options",
-        "Chemical and stain resistant",
-        "Easy to clean and maintain"
-      ]
+      image: "/assets/chips.png"
     },
     {
       id: 6,
@@ -114,13 +84,7 @@ export default function Services() {
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
       ),
-      image: "/assets/Types-of-Wall-Texture.avif",
-      features: [
-        "Orange peel texture",
-        "Knockdown texture",
-        "Skip trowel finishes",
-        "Custom texture matching"
-      ]
+      image: "/assets/Types-of-Wall-Texture.avif"
     },
     {
       id: 7,
@@ -131,12 +95,6 @@ export default function Services() {
         </svg>
       ),
       image: "/assets/construction-worker-painting.avif",
-      features: [
-        "Color consultation",
-        "Premium paint products",
-        "Detailed prep work",
-        "Clean, efficient process"
-      ],
       featured: true
     }
   ]
@@ -169,9 +127,13 @@ export default function Services() {
                 <h3 className={styles.serviceTitle}>{t(`services.${service.key}.title`)}</h3>
                 <p className={styles.serviceDescription}>{t(`services.${service.key}.description`)}</p>
                 <ul className={styles.serviceFeatures}>
-                  {service.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
+                  {(() => {
+                    const rawFeatures = t(`services.${service.key}.features`, { returnObjects: true })
+                    const featureList = Array.isArray(rawFeatures) ? rawFeatures : []
+                    return featureList.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))
+                  })()}
                 </ul>
                 <a href="#contact" className={styles.serviceLink}>{t('services.learnMore')} →</a>
               </div>

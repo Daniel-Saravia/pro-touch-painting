@@ -8,68 +8,110 @@
     "getQuote": "Cotización"
   },
   "hero": {
-    "title": "Transforma Tu Espacio con Pro Touch",
-    "subtitle": "Pintura y Drywall Profesional",
-    "description": "Más de 20 años de experiencia brindando servicios de pintura y drywall de alta calidad a clientes residenciales, comerciales y HOA. Tu satisfacción es nuestra prioridad.",
+    "title": "Expertos en Pintura y Drywall en Phoenix",
+    "subtitle": "Servicio para Phoenix, Scottsdale y todo el Valle",
+    "description": "Pro Touch Painting & Drywall ofrece servicios de pintura, reparación de drywall y acabados de alta calidad para hogares, comercios y comunidades HOA en Phoenix. Confía en profesionales licenciados que atienden todo el condado de Maricopa.",
     "cta": "Obtén Cotización Gratis",
     "learnMore": "Conoce Más"
   },
   "services": {
-    "title": "Nuestros Servicios Profesionales",
-    "subtitle": "Soluciones integrales para necesidades residenciales, comerciales y HOA de pintura y drywall",
+    "title": "Servicios de Pintura y Drywall en Phoenix",
+    "subtitle": "Pintores y especialistas en drywall con licencia en Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale y ciudades cercanas",
     "learnMore": "Más Información",
     "drywall": {
       "title": "Instalación y Reparación de Drywall",
-      "description": "Instalación experta de drywall nuevo y reparaciones perfectas para paredes existentes. Manejamos desde pequeños parches hasta instalaciones completas de habitaciones."
+      "description": "Instalación, acabado y reparación de muros con precisión para remodelaciones y proyectos nuevos en Phoenix.",
+      "features": [
+        "Instalación de drywall en Phoenix para ampliaciones y mejoras comerciales",
+        "Reparación de grietas, hoyos y daños por agua con acabados lisos",
+        "Nivel 5 y empates de textura en cualquier punto del Valle",
+        "Lijado con control de polvo seguro para espacios habitados"
+      ]
     },
     "popcorn": {
       "title": "Eliminación de Techo de Palomitas",
-      "description": "Transforma techos de palomitas anticuados en superficies lisas y modernas. Eliminación segura con mínimo desorden e interrupción en tu hogar."
+      "description": "Renueva techos obsoletos con eliminación profesional de textura y acabados frescos para hogares y condominios en Phoenix.",
+      "features": [
+        "Coordinación de pruebas de asbesto para propiedades antiguas de Phoenix",
+        "Proceso limpio y contenido para proteger tus interiores",
+        "Resuperficies lisas con texturas modernas como knockdown u orange peel",
+        "Equipos de pintura listos para cumplir con fechas de mudanza rápidas"
+      ]
     },
     "cabinet": {
       "title": "Renovación de Gabinetes",
-      "description": "Dale a tu cocina o baño una transformación impresionante con renovación profesional de gabinetes. Ahorra miles comparado con el reemplazo."
+      "description": "Actualiza cocinas, baños y muebles empotrados con acabados de calidad de exhibición en toda el área metropolitana de Phoenix.",
+      "features": [
+        "Asesoría de color alineada con las tendencias del Valle de Phoenix",
+        "Aplicación con aspersión de grado fábrica en ambientes controlados",
+        "Recubrimientos ecológicos que resisten el calor y la humedad de Arizona",
+        "Actualización de herrajes y mejoras de cierre suave disponibles"
+      ]
     },
     "power": {
       "title": "Lavado a Presión",
-      "description": "Restaura las superficies exteriores de tu propiedad a condición como nueva con servicios profesionales de lavado a presión."
+      "description": "Recupera la apariencia exterior con lavado a presión para estuco, mampostería, concreto y espacios exteriores.",
+      "features": [
+        "Lavado previo a la pintura para casas de estuco y block en Phoenix",
+        "Limpieza de cocheras, banquetas y pisos de garaje que elimina manchas",
+        "Lavado de terrazas y áreas de alberca para quitar polvo del desierto",
+        "Opciones de soft-wash ideales para monumentos y señalización de HOA"
+      ]
     },
     "epoxy": {
       "title": "Pisos de Epoxy para Garaje",
-      "description": "Transforma tu garaje con pisos de epoxy duraderos y hermosos. Elige entre una variedad de estilos decorativos de chips y patrones de gradiente para un look personalizado."
+      "description": "Instalamos pisos epóxicos duraderos y decorativos que resisten el clima de Arizona y ofrecen un garaje de nivel showroom.",
+      "features": [
+        "Sistemas de flakes completos populares en hogares de lujo en Phoenix",
+        "Selladores UV estables diseñados para el sol de Arizona",
+        "Opciones antiderrapantes para garajes, talleres y bahías comerciales",
+        "Programación de retorno al uso al día siguiente para propietarios ocupados"
+      ]
     },
     "texture": {
       "title": "Aplicación de Textura",
-      "description": "Añade carácter y dimensión a tus paredes y techos con servicios profesionales de aplicación de textura."
+      "description": "Igualamos o renovamos texturas de paredes y techos con técnicos especializados en estilos arquitectónicos de Phoenix.",
+      "features": [
+        "Dominio de texturas orange peel, knockdown, skip trowel y Santa Fe",
+        "Empates de textura después de trabajos de plomería o electricidad",
+        "Acabados decorativos personalizados que realzan residencias de lujo",
+        "Entregas rápidas para administradores de propiedades y listados inmobiliarios"
+      ]
     },
     "painting": {
       "title": "Pintura Interior y Exterior",
-      "description": "Transforma cualquier espacio con nuestros servicios de pintura premium. Especializándonos en hogares residenciales, propiedades comerciales y comunidades HOA, usamos pinturas de máxima calidad y técnicas meticulosas para resultados impecables."
+      "description": "Pintura premium interior y exterior para residencias, negocios y comunidades HOA en Phoenix y el East Valley.",
+      "features": [
+        "Preparación, enmascarado y protección detallada en propiedades ocupadas",
+        "Sistemas Sherwin-Williams y Dunn-Edwards creados para el desierto",
+        "Asesoría de color adaptada a la iluminación y tendencias de Phoenix",
+        "Especialistas en cumplimiento HOA en Scottsdale, Chandler y Gilbert"
+      ]
     }
   },
   "gallery": {
-    "title": "Galería de Nuestro Trabajo",
-    "subtitle": "Mira la calidad y artesanía en nuestros proyectos recientes",
+    "title": "Galería de Proyectos en Phoenix",
+    "subtitle": "Descubre nuestras transformaciones recientes de pintura y drywall en todo el Valle",
     "viewAll": "Ver Todo"
   },
   "about": {
     "title": "¿Por Qué Elegir Pro Touch?",
-    "description": "Con más de 25 años de experiencia en la industria de pintura y drywall, Pro Touch Painting & Drywall ha construido una reputación de excelencia, confiabilidad y artesanía excepcional. Como contratista HOA de confianza, nos enorgullecemos de transformar espacios residenciales, comerciales y comunitarios superando las expectativas de nuestros clientes en cada proyecto.",
+    "description": "Durante más de 25 años, propietarios, constructores personalizados y juntas de HOA en Phoenix han confiado en Pro Touch Painting & Drywall por su preparación meticulosa, cronogramas confiables y acabados premium. Nuestro equipo con licencia, fianza y seguro ofrece resultados consistentes en todo el condado de Maricopa.",
     "onTime": {
-      "title": "Finalización a Tiempo",
-      "description": "Respetamos tu tiempo y completamos proyectos según el cronograma"
+      "title": "Entrega Puntual",
+      "description": "Programación adaptada a tu calendario en Phoenix"
     },
     "quality": {
       "title": "Garantía de Calidad",
-      "description": "Garantía de satisfacción del 100% en todo nuestro trabajo"
+      "description": "Garantía de mano de obra respaldada por materiales de primera"
     },
     "communication": {
       "title": "Comunicación Clara",
-      "description": "Precios transparentes y actualizaciones regulares del proyecto"
+      "description": "Gestión dedicada con actualizaciones proactivas"
     },
     "licensed": {
-      "title": "Licenciado y Asegurado",
-      "description": "Completamente licenciado, afianzado y asegurado para tu protección"
+      "title": "Licenciados y Asegurados",
+      "description": "Pintores y especialistas en drywall con licencia estatal en Arizona"
     },
     "stats": {
       "yearsExperience": "Años de Experiencia",
@@ -80,7 +122,7 @@
   },
   "testimonials": {
     "title": "Lo Que Dicen Nuestros Clientes",
-    "subtitle": "Reseñas reales de clientes satisfechos",
+    "subtitle": "Reseñas reales de propietarios, juntas HOA y constructores en Phoenix",
     "reviews": [
       {
         "text": "Nuestra HOA eligió Pro Touch Painting, y estamos extremadamente contentos de que lo hicieron. Nuestra casa fue terminada hoy, ¡y estamos muy impresionados! Más de 20 unidades en nuestra HOA están terminadas en este punto, y todas se ven geniales. Los vecinos con los que hemos hablado están muy complacidos. Jorge y el equipo son verdaderos profesionales - muy eficientes. El trabajo de preparación fue completo. La comunicación fue excelente, y sonreímos cada vez que uno del equipo cantaba una melodía. ¡Su experiencia se nota y se merecen cada una de las cinco estrellas!",
@@ -95,13 +137,13 @@
     ]
   },
   "cta": {
-    "title": "¿Listo para Transformar Tu Espacio?",
-    "description": "Obtén una consulta y cotización gratuita hoy. Hagamos realidad tu visión.",
+    "title": "¿Listo para Renovar Tu Propiedad en Phoenix?",
+    "description": "Programa una visita y cotización gratuita para pintura, drywall o pisos epóxicos en cualquier punto del área metropolitana de Phoenix.",
     "button": "Comenzar"
   },
   "contact": {
-    "title": "Obtén Tu Cotización Gratuita Hoy",
-    "subtitle": "Hablemos de tu proyecto y hagamos realidad tu visión",
+    "title": "Solicita Tu Cotización de Pintura en Phoenix",
+    "subtitle": "Cuéntanos sobre tu proyecto y recibe una propuesta detallada rápidamente",
     "form": {
       "name": "Nombre Completo *",
       "email": "Dirección de Email *",
@@ -109,7 +151,7 @@
       "service": "Servicio Necesario *",
       "serviceSelect": "Selecciona un servicio",
       "message": "Detalles del Proyecto",
-      "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+      "messagePlaceholder": "Comparte el tipo de propiedad, colonia y fecha deseada...",
       "submit": "Obtener Cotización Gratis",
       "submitting": "Enviando...",
       "services": {
@@ -135,7 +177,7 @@
       "hours": "Horarios",
       "hoursDetail": "Lun-Vie: 7:00 AM - 6:00 PM<br/>Sáb: 8:00 AM - 4:00 PM<br/>Dom: Solo Servicios de Emergencia",
       "serviceArea": "Área de Servicio",
-      "serviceAreaDetail": "Sirviendo el Área Metropolitana<br/>y Comunidades Circundantes",
+      "serviceAreaDetail": "Atendemos Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Peoria y Paradise Valley",
       "badges": {
         "bbb": "Calificación BBB A+",
         "insured": "Completamente Asegurado",
@@ -144,7 +186,7 @@
     }
   },
   "footer": {
-    "description": "Tu socio de confianza para servicios profesionales de pintura y drywall. Artesanía de calidad, satisfacción garantizada.",
+    "description": "Tu aliado de confianza en Phoenix para pintura, drywall, renovación de gabinetes y pisos epóxicos. Servimos todo el Valle con profesionales licenciados y asegurados.",
     "services": "Servicios",
     "quickLinks": "Enlaces Rápidos",
     "businessHours": "Horario de Atención",
