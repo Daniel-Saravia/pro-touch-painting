@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL,
       to: process.env.QUOTE_ALERT_EMAIL,
-      reply_to: email,
+      replyTo: email,
       subject: `New Quote Request from ${name}`,
       html: `
         <h2>New Quote Request</h2>
