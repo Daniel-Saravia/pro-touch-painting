@@ -147,7 +147,7 @@
     "form": {
       "name": "Full Name *",
       "email": "Email Address *",
-      "phone": "Phone Number *",
+      "phone": "Phone Number (optional)",
       "service": "Service Needed *",
       "serviceSelect": "Select a service",
       "message": "Project Details",
@@ -167,7 +167,8 @@
       },
       "alerts": {
         "success": "Thank you for your inquiry! We will contact you soon.",
-        "error": "Sorry, there was an error submitting your request. Please try again."
+        "error": "Sorry, there was an error submitting your request. Please try again.",
+        "missingFields": "Please complete your name, email, and selected service before submitting."
       }
     },
     "info": {

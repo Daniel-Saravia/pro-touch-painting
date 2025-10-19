@@ -1,23 +1,45 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent, ChangeEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import styles from './Contact.module.css'
 
+const INITIAL_FORM_STATE = {
+  name: '',
+  email: '',
+  phone: '',
+  service: '',
+  message: ''
+}
+
+type FormStatus = {
+  type: 'success' | 'error'
+  message: string
+} | null
+
 export default function Contact() {
   const { t } = useTranslation()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  })
-
+  const [formData, setFormData] = useState({ ...INITIAL_FORM_STATE })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStatus, setFormStatus] = useState<FormStatus>(null)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setFormStatus(null)
+
+    const submissionData = {
+      name: formData.name.trim(),
+      email: formData.email.trim().toLowerCase(),
+      phone: formData.phone.trim(),
+      service: formData.service,
+      message: formData.message.trim()
+    }
+
+    if (!submissionData.name || !submissionData.email || !submissionData.service) {
+      setFormStatus({ type: 'error', message: t('contact.form.alerts.missingFields') })
+      return
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -26,30 +48,34 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...submissionData,
+          phone: submissionData.phone || undefined
+        }),
       })
 
+      const payload = await response.json().catch(() => null)
+
       if (response.ok) {
-        alert(t('contact.form.alerts.success'))
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        })
+        setFormStatus({ type: 'success', message: t('contact.form.alerts.success') })
+        setFormData({ ...INITIAL_FORM_STATE })
       } else {
-        alert(t('contact.form.alerts.error'))
+        setFormStatus({
+          type: 'error',
+          message: typeof payload?.message === 'string' && payload.message.length > 0
+            ? payload.message
+            : t('contact.form.alerts.error')
+        })
       }
     } catch (error) {
       console.error('Error submitting form:', error)
-      alert(t('contact.form.alerts.error'))
+      setFormStatus({ type: 'error', message: t('contact.form.alerts.error') })
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -66,6 +92,15 @@ export default function Contact() {
         <div className={styles.contactContent}>
           <div className={styles.contactFormWrapper}>
             <form className={styles.contactForm} onSubmit={handleSubmit}>
+              {formStatus && (
+                <div
+                  className={`${styles.formStatus} ${formStatus.type === 'success' ? styles.formStatusSuccess : styles.formStatusError}`}
+                  role="status"
+                  aria-live="polite"
+                >
+                  {formStatus.message}
+                </div>
+              )}
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">{t('contact.form.name')}</label>
@@ -99,7 +134,6 @@ export default function Contact() {
                     name="phone" 
                     value={formData.phone}
                     onChange={handleChange}
-                    required 
                   />
                 </div>
                 <div className={styles.formGroup}>

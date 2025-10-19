@@ -26,6 +26,26 @@
     margin-bottom: 1.5rem;
 }
 
+.formStatus {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.formStatusSuccess {
+    background-color: rgba(76, 175, 80, 0.12);
+    border: 1px solid rgba(76, 175, 80, 0.35);
+    color: #2f7a32;
+}
+
+.formStatusError {
+    background-color: rgba(244, 67, 54, 0.12);
+    border: 1px solid rgba(244, 67, 54, 0.35);
+    color: #c62828;
+}
+
 .formGroup label {
     display: block;
     margin-bottom: 0.5rem;
