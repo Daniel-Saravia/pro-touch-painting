@@ -29,6 +29,7 @@ Set these in your `.env.local` (or hosting provider secrets) before deploying:
 
 4. **Backend/API Hardening**
    - Update `pages/api/submit-quote.ts` to pull `RESEND_FROM_EMAIL` and `QUOTE_ALERT_EMAIL` from env vars.
+   - Ensure Next.js runs in its default server runtime (no static export) so the API route deploys correctly.
    - Add structured logging for failures and return explicit error messages to the client.
    - Build a single formatted email payload with timestamp, service selected, and contact details for callback.
 
