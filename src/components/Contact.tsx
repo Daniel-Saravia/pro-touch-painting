@@ -169,6 +169,9 @@ export default function Contact() {
                   onChange={handleChange}
                 ></textarea>
               </div>
+              <p className={styles.formConsent}>
+                {t('contact.form.consent')}
+              </p>
               <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>
                 {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
               </button>

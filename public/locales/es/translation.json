@@ -142,7 +142,7 @@
     "button": "Comenzar"
   },
   "contact": {
-    "title": "Solicita Tu Cotización de Pintura en Phoenix",
+    "title": "Contáctanos",
     "subtitle": "Cuéntanos sobre tu proyecto y recibe una propuesta detallada rápidamente",
     "form": {
       "name": "Nombre Completo *",
@@ -152,6 +152,7 @@
       "serviceSelect": "Selecciona un servicio",
       "message": "Detalles del Proyecto",
       "messagePlaceholder": "Comparte el tipo de propiedad, colonia y fecha deseada...",
+      "consent": "Al enviar este formulario, aceptas recibir mensajes de texto y correos electrónicos de Pro Touch Painting & Drywall relacionados con tu solicitud de cotización y futuras actualizaciones de servicio. Pueden aplicar tarifas de mensajes y datos. Puedes darte de baja en cualquier momento.",
       "submit": "Obtener Cotización Gratis",
       "submitting": "Enviando...",
       "services": {
