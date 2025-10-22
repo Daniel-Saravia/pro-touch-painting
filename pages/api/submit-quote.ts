@@ -42,10 +42,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     const trimmedMessage = typeof message === 'string' ? message.trim() : ''
-    const sanitizedMessage = trimmedMessage.replace(/https?:\/\/\S+/gi, '[link removed]')
+
+    // Preserve preceding boundary while removing URL-like substrings
+    const sanitizeForSms = (input: string) => {
+      if (!input) return input
+      const urlLikePattern = /(^|[\s(])(https?:\/\/\S+|www\.\S+|(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}\S*)/gi
+      return input.replace(urlLikePattern, (_match: string, p1: string) => `${p1}[link removed]`).trim()
+    }
+
+    const formatEmailForSms = (input: string) => {
+      if (!input) return input
+      return input
+        .replace(/@/g, ' [at] ')
+        .replace(/\./g, ' [dot] ')
+        .replace(/\s+/g, ' ')
+        .trim()
+    }
+
+    const sanitizedMessage = sanitizeForSms(trimmedMessage)
+    const sanitizedEmailForSms = formatEmailForSms(email)
     const smsBodyParts = [
       `New quote request from ${name}`,
-      `Email: ${email}`,
+      `Email: ${sanitizedEmailForSms}`,
       `Phone: ${phone}`,
       `Service: ${service}`,
       sanitizedMessage

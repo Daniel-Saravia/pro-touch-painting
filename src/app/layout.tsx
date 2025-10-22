@@ -81,8 +81,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${roboto.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.variable} ${roboto.variable}`} suppressHydrationWarning>
         <I18nProvider>
           {children}
         </I18nProvider>
