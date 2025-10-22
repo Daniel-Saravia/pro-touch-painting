@@ -42,7 +42,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     const trimmedMessage = typeof message === 'string' ? message.trim() : ''
-    const sanitizedMessage = trimmedMessage.replace(/https?:\/\/\S+/gi, '[link removed]')
+    // Broaden sanitization to catch bare domains and www.* without protocol,
+    // while avoiding email addresses (we're only sanitizing the free-text message).
+    const sanitizeForSms = (input: string) => {
+      if (!input) return input
+      return input.replace(
+        /(^|[\\s(])(https?:\\/\\/\\S+|www\\.\\S+|(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z]{2,}\\S*)/gi,
+        (_match, p1) => ${p1}[link removed]`n      ).trim()
+    }
+    const sanitizedMessage = sanitizeForSms(trimmedMessage)
     const smsBodyParts = [
       `New quote request from ${name}`,
       `Email: ${email}`,
@@ -98,3 +106,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(500).json({ message: 'Failed to submit quote request' })
   }
 }
+
