@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
                     <td style="vertical-align:middle;">
-                      <img src="https://protouch.s3.us-east-2.amazonaws.com/ProTouch.svg" alt="${brandName} logo" height="36" style="display:inline-block;height:36px;width:auto;vertical-align:middle;" />
+                      <img src="https://protouch.s3.us-east-2.amazonaws.com/android-chrome-192x192.png" alt="${brandName} logo" height="36" style="display:inline-block;height:36px;width:auto;vertical-align:middle;" />
                       <span style="display:inline-block;margin-left:10px;font-size:20px;line-height:1.3;color:#FFFFFF;letter-spacing:0.2px;font-weight:700;vertical-align:middle;">${brandName}</span>
                     </td>
                     <td align="right" style="vertical-align:middle;">
