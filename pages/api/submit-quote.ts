@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Resend } from 'resend'
-import fs from 'fs'
-import path from 'path'
+// (Logo now sourced from external URL; no fs/path needed)
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -36,17 +35,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .replace(/'/g, '&#39;')
 
     const brandName = process.env.NEXT_PUBLIC_SITE_NAME || 'Pro Touch Painting & Drywall'
-    
-    // Load logo as inline data URI (no external assets)
-    let logoDataUri: string | null = null
-    try {
-      const svgPath = path.join(process.cwd(), 'public', 'assets', 'ProTouch.svg')
-      const svgBuffer = fs.readFileSync(svgPath)
-      logoDataUri = `data:image/svg+xml;base64,${svgBuffer.toString('base64')}`
-    } catch (e) {
-      // If logo is missing or can't be read, continue without it
-      console.warn('Email logo not embedded:', e)
-    }
     const safeName = escapeHtml(name)
     const safeEmail = escapeHtml(email)
     const safePhone = escapeHtml(phone)
@@ -75,8 +63,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                   <tr>
                     <td style="vertical-align:middle;">
-                      ${logoDataUri ? `<img src="${logoDataUri}" alt="${brandName} logo" height="36" style="display:inline-block;height:36px;width:auto;vertical-align:middle;" />` : ''}
-                      <span style="display:inline-block;margin-left:${logoDataUri ? '10px' : '0'};font-size:20px;line-height:1.3;color:#FFFFFF;letter-spacing:0.2px;font-weight:700;vertical-align:middle;">${brandName}</span>
+                      <img src="https://protouch.s3.us-east-2.amazonaws.com/ProTouch.svg" alt="${brandName} logo" height="36" style="display:inline-block;height:36px;width:auto;vertical-align:middle;" />
+                      <span style="display:inline-block;margin-left:10px;font-size:20px;line-height:1.3;color:#FFFFFF;letter-spacing:0.2px;font-weight:700;vertical-align:middle;">${brandName}</span>
                     </td>
                     <td align="right" style="vertical-align:middle;">
                       <span style="font-size:14px;color:#FFEADB;">New Quote Request</span>
@@ -133,13 +121,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </body>
 </html>`
 
+    // Minify HTML to avoid Gmail clipping (~102KB threshold)
+    const minifyHtml = (html: string) =>
+      html
+        .replace(/>\s+</g, '><')
+        .replace(/[\r\n\t]+/g, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim()
+
+    const emailHtmlMin = minifyHtml(emailHtml)
+
     // Send email notification
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL,
       to: process.env.QUOTE_ALERT_EMAIL,
       replyTo: email,
       subject: `New Quote Request from ${safeName}`,
-      html: emailHtml
+      html: emailHtmlMin
     })
 
     const trimmedMessage = typeof message === 'string' ? message.trim() : ''
