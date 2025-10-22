@@ -42,12 +42,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     const trimmedMessage = typeof message === 'string' ? message.trim() : ''
+    const sanitizedMessage = trimmedMessage.replace(/https?:\/\/\S+/gi, '[link removed]')
     const smsBodyParts = [
       `New quote request from ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
       `Service: ${service}`,
-      trimmedMessage ? `Message: ${trimmedMessage.slice(0, 120)}${trimmedMessage.length > 120 ? '…' : ''}` : ''
+      sanitizedMessage
+        ? `Message: ${sanitizedMessage.slice(0, 120)}${sanitizedMessage.length > 120 ? '…' : ''}`
+        : ''
     ].filter(Boolean)
 
     let smsStatus: 'sent' | 'failed' = 'sent'
