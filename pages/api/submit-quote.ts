@@ -13,9 +13,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ message: 'Email service not configured' })
   }
 
+  if (!process.env.TEXTBELT_API_KEY || !process.env.TEXTBELT_PHONE) {
+    console.error('Missing Textbelt environment variables')
+    return res.status(500).json({ message: 'SMS service not configured' })
+  }
+
   const { name, email, phone, service, message } = req.body
 
-  if (!name || !email || !service) {
+  if (!name || !email || !phone || !service) {
     return res.status(400).json({ message: 'Missing required fields' })
   }
 
@@ -36,7 +41,55 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       `
     })
 
-    res.status(200).json({ message: 'Quote request submitted successfully' })
+    const trimmedMessage = typeof message === 'string' ? message.trim() : ''
+    const smsBodyParts = [
+      `New quote request from ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Service: ${service}`,
+      trimmedMessage ? `Message: ${trimmedMessage.slice(0, 120)}${trimmedMessage.length > 120 ? '…' : ''}` : ''
+    ].filter(Boolean)
+
+    let smsStatus: 'sent' | 'failed' = 'sent'
+    let smsErrorMessage: string | null = null
+
+    try {
+      const smsResponse = await fetch('https://textbelt.com/text', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          phone: process.env.TEXTBELT_PHONE,
+          message: smsBodyParts.join('\n'),
+          key: process.env.TEXTBELT_API_KEY
+        })
+      })
+
+      const smsResult = await smsResponse.json().catch(() => null)
+
+      if (!smsResponse.ok || !smsResult?.success) {
+        smsStatus = 'failed'
+        smsErrorMessage = typeof smsResult?.error === 'string' && smsResult.error.length > 0
+          ? smsResult.error
+          : `Textbelt request failed with status ${smsResponse.status}`
+        console.error('Textbelt SMS error:', smsResult || smsResponse.statusText)
+      }
+    } catch (smsError) {
+      smsStatus = 'failed'
+      smsErrorMessage = smsError instanceof Error ? smsError.message : 'Unknown Textbelt error'
+      console.error('Textbelt SMS exception:', smsError)
+    }
+
+    if (smsStatus === 'failed') {
+      return res.status(200).json({
+        message: 'Quote submitted, but SMS alert could not be delivered. We will follow up soon.',
+        smsStatus,
+        smsError: smsErrorMessage
+      })
+    }
+
+    res.status(200).json({ message: 'Quote request submitted successfully', smsStatus })
   } catch (error) {
     console.error('Error submitting quote:', error)
     res.status(500).json({ message: 'Failed to submit quote request' })

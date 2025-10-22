@@ -147,7 +147,7 @@
     "form": {
       "name": "Nombre Completo *",
       "email": "Dirección de Email *",
-      "phone": "Número de Teléfono (opcional)",
+      "phone": "Número de Teléfono *",
       "service": "Servicio Necesario *",
       "serviceSelect": "Selecciona un servicio",
       "message": "Detalles del Proyecto",
@@ -169,7 +169,8 @@
       "alerts": {
         "success": "¡Gracias por tu consulta! Te contactaremos pronto.",
         "error": "Lo siento, hubo un error al enviar tu solicitud. Por favor intenta de nuevo.",
-        "missingFields": "Por favor completa tu nombre, correo electrónico y servicio antes de enviar."
+        "missingFields": "Por favor completa tu nombre, correo electrónico, teléfono y servicio antes de enviar.",
+        "smsFailure": "Recibimos tu solicitud, pero no pudimos enviar la alerta por texto. Te contactaremos por correo electrónico en breve."
       }
     },
     "info": {

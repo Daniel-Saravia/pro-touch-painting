@@ -35,7 +35,7 @@ export default function Contact() {
       message: formData.message.trim()
     }
 
-    if (!submissionData.name || !submissionData.email || !submissionData.service) {
+    if (!submissionData.name || !submissionData.email || !submissionData.phone || !submissionData.service) {
       setFormStatus({ type: 'error', message: t('contact.form.alerts.missingFields') })
       return
     }
@@ -49,15 +49,27 @@ export default function Contact() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...submissionData,
-          phone: submissionData.phone || undefined
+          ...submissionData
         }),
       })
 
       const payload = await response.json().catch(() => null)
 
       if (response.ok) {
-        setFormStatus({ type: 'success', message: t('contact.form.alerts.success') })
+        if (payload?.smsStatus === 'failed') {
+          if (payload?.smsError) {
+            console.warn('Quote SMS failed:', payload.smsError)
+          }
+          setFormStatus({ type: 'error', message: t('contact.form.alerts.smsFailure') })
+          return
+        }
+
+        setFormStatus({
+          type: 'success',
+          message: typeof payload?.message === 'string' && payload.message.length > 0
+            ? payload.message
+            : t('contact.form.alerts.success')
+        })
         setFormData({ ...INITIAL_FORM_STATE })
       } else {
         setFormStatus({
@@ -134,6 +146,7 @@ export default function Contact() {
                     name="phone" 
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className={styles.formGroup}>
