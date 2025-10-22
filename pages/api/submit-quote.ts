@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Resend } from 'resend'
+import fs from 'fs'
+import path from 'path'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -34,6 +36,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .replace(/'/g, '&#39;')
 
     const brandName = process.env.NEXT_PUBLIC_SITE_NAME || 'Pro Touch Painting & Drywall'
+    
+    // Load logo as inline data URI (no external assets)
+    let logoDataUri: string | null = null
+    try {
+      const svgPath = path.join(process.cwd(), 'public', 'assets', 'ProTouch.svg')
+      const svgBuffer = fs.readFileSync(svgPath)
+      logoDataUri = `data:image/svg+xml;base64,${svgBuffer.toString('base64')}`
+    } catch (e) {
+      // If logo is missing or can't be read, continue without it
+      console.warn('Email logo not embedded:', e)
+    }
     const safeName = escapeHtml(name)
     const safeEmail = escapeHtml(email)
     const safePhone = escapeHtml(phone)
@@ -59,8 +72,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width:640px;background-color:#FFFFFF;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);overflow:hidden;">
             <tr>
               <td style="background: linear-gradient(135deg, #D2691E, #8B2635);padding:20px 24px;">
-                <h1 style="margin:0;font-size:20px;line-height:1.3;color:#FFFFFF;letter-spacing:0.2px;">${brandName}</h1>
-                <p style="margin:6px 0 0 0;font-size:14px;color:#FFEADB;">New Quote Request</p>
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="vertical-align:middle;">
+                      ${logoDataUri ? `<img src="${logoDataUri}" alt="${brandName} logo" height="36" style="display:inline-block;height:36px;width:auto;vertical-align:middle;" />` : ''}
+                      <span style="display:inline-block;margin-left:${logoDataUri ? '10px' : '0'};font-size:20px;line-height:1.3;color:#FFFFFF;letter-spacing:0.2px;font-weight:700;vertical-align:middle;">${brandName}</span>
+                    </td>
+                    <td align="right" style="vertical-align:middle;">
+                      <span style="font-size:14px;color:#FFEADB;">New Quote Request</span>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             <tr>
