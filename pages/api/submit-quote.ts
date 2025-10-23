@@ -130,6 +130,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .trim()
 
     const emailHtmlMin = minifyHtml(emailHtml)
+    const emailText = [
+      `${brandName} — New Quote Request`,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      `Service: ${service}`,
+      `Message: ${rawMessage}`
+    ].join('\n')
 
     // Send email notification
     await resend.emails.send({
@@ -137,7 +145,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to: process.env.QUOTE_ALERT_EMAIL,
       replyTo: email,
       subject: `New Quote Request from ${safeName}`,
-      html: emailHtmlMin
+      html: emailHtmlMin,
+      text: emailText
     })
 
     const trimmedMessage = typeof message === 'string' ? message.trim() : ''
