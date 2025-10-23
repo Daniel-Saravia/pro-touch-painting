@@ -2,8 +2,17 @@
 
 import { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useFBX } from '@react-three/drei'
+import { OrbitControls, useFBX, Html } from '@react-three/drei'
 import * as THREE from 'three'
+import styles from './Hero3DModel.module.css'
+
+function CanvasLoader() {
+  return (
+    <Html center>
+      <div className={styles.canvasLoader} role="status" aria-label="Loading 3D model" />
+    </Html>
+  )
+}
 
 function FBXModel({ isMobile, scale }: { isMobile: boolean, scale: number }) {
   const fbx = useFBX('/assets/models/PROTOUCH_SIMPLE.fbx')
@@ -88,7 +97,7 @@ export default function Hero3DModel() {
         <spotLight position={[10, 5, 10]} angle={0.4} penumbra={0.8} intensity={1.5} />
         <spotLight position={[-10, 5, 10]} angle={0.4} penumbra={0.8} intensity={1.5} />
         
-        <Suspense fallback={null}>
+        <Suspense fallback={<CanvasLoader />}>
           <FBXModel isMobile={isMobile} scale={modelScale} />
         </Suspense>
         

@@ -1,6 +1,7 @@
 'use client'
 
-import Link from 'next/link'
+import { useCallback, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import styles from './Gallery.module.css'
 
@@ -33,6 +34,23 @@ const galleryItems = [
 
 export default function Gallery() {
   const { t, ready } = useTranslation()
+  const router = useRouter()
+  const [isNavigating, setIsNavigating] = useState(false)
+
+  useEffect(() => {
+    if (router.prefetch) {
+      router.prefetch('/gallery')
+    }
+  }, [router])
+
+  const handleNavigate = useCallback(() => {
+    if (isNavigating) return
+    setIsNavigating(true)
+    router.push('/gallery')
+  }, [isNavigating, router])
+
+  const buttonLabel = ready ? t('gallery.viewWork') : 'View Our Work'
+  const loadingLabel = ready ? t('gallery.loading') : 'Loading...'
 
   if (!ready) {
     return (
@@ -56,9 +74,16 @@ export default function Gallery() {
             ))}
           </div>
           <div className={styles.galleryCTA}>
-            <Link href="/gallery" className="btn btn-secondary">
-              View Our Work
-            </Link>
+            <button
+              type="button"
+              className={`btn btn-secondary ${styles.ctaButton}`}
+              onClick={handleNavigate}
+              disabled={isNavigating}
+              aria-busy={isNavigating}
+            >
+              {isNavigating && <span className={styles.loadingSpinner} aria-hidden="true" />}
+              <span>{isNavigating ? loadingLabel : buttonLabel}</span>
+            </button>
           </div>
         </div>
       </section>
@@ -86,9 +111,16 @@ export default function Gallery() {
           ))}
         </div>
         <div className={styles.galleryCTA}>
-          <Link href="/gallery" className="btn btn-secondary">
-            {t('gallery.viewWork')}
-          </Link>
+          <button
+            type="button"
+            className={`btn btn-secondary ${styles.ctaButton}`}
+            onClick={handleNavigate}
+            disabled={isNavigating}
+            aria-busy={isNavigating}
+          >
+            {isNavigating && <span className={styles.loadingSpinner} aria-hidden="true" />}
+            <span>{isNavigating ? loadingLabel : buttonLabel}</span>
+          </button>
         </div>
       </div>
     </section>
