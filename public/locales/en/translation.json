@@ -12,16 +12,22 @@
     "subtitle": "Serving Phoenix, Scottsdale & the Greater Valley",
     "description": "Pro Touch Painting & Drywall delivers top-rated painting, drywall repair, and finishing services for Phoenix homeowners, builders, commercial properties, and HOA communities. Count on licensed professionals for flawless results throughout Maricopa County.",
     "cta": "Get Free Quote",
-    "learnMore": "Learn More",
-    "features": [
-      "Licensed • Bonded • Insured",
-      "25+ years serving Goodyear & the Valley",
-      "Warranty-backed prep and finishes"
-    ]
+    "learnMore": "Learn More"
   },
   "services": {
     "title": "Phoenix Painting & Drywall Services",
     "subtitle": "Licensed painters and drywall specialists trusted in Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, and surrounding cities",
+    "intro": {
+      "heading": "Phoenix Painting & Drywall Experts",
+      "body": "Pro Touch Painting & Drywall delivers top-rated painting, drywall repair, and finishing services for Phoenix homeowners, builders, commercial properties, and HOA communities. Count on licensed professionals for flawless results throughout Maricopa County.",
+      "features": [
+        "Licensed • Bonded • Insured",
+        "25+ years serving Goodyear & the Valley",
+        "Warranty-backed prep and finishes"
+      ],
+      "primaryCta": "Get Free Quote",
+      "secondaryCta": "Learn More"
+    },
     "learnMore": "Learn More",
     "drywall": {
       "title": "Drywall Installation & Repair",

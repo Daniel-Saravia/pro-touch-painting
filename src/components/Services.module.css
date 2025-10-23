@@ -9,6 +9,75 @@
     gap: 2rem;
 }
 
+.servicesIntro {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(210, 105, 30, 0.08));
+    border: 1px solid rgba(30, 58, 138, 0.15);
+    border-radius: 18px;
+    padding: 2.5rem 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.servicesIntroText {
+    max-width: 720px;
+}
+
+.servicesIntroTitle {
+    font-family: var(--font-poppins);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+.servicesIntroBody {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.servicesIntroFeatures {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 0;
+    margin: 0;
+}
+
+.servicesIntroFeatures li {
+    background-color: #ffffff;
+    border: 1px solid rgba(210, 105, 30, 0.35);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.servicesIntroFeatures li::before {
+    content: '';
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-orange), var(--deep-maroon));
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.18);
+}
+
+.servicesIntroActions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 200px;
+    align-items: stretch;
+}
+
 .serviceCard {
     background-color: var(--white);
     border-radius: 15px;
@@ -150,6 +219,23 @@
         padding: 4rem 0;
     }
     
+    .servicesIntro {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.25rem;
+    }
+    
+    .servicesIntroActions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .servicesIntroActions .btn {
+        min-width: 200px;
+    }
+    
     .servicesGrid {
         gap: 1.5rem;
     }
@@ -158,6 +244,21 @@
 @media (max-width: 768px) {
     .services {
         padding: 3rem 0;
+    }
+    
+    .servicesIntro {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .servicesIntroFeatures {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicesIntroActions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
     }
     
     .servicesGrid {
@@ -183,6 +284,10 @@
 }
 
 @media (max-width: 480px) {
+    .servicesIntro {
+        padding: 1.75rem;
+    }
+    
     .serviceContent {
         padding: 1.5rem;
     }
