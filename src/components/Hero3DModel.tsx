@@ -6,10 +6,16 @@ import { OrbitControls, useFBX, Html } from '@react-three/drei'
 import * as THREE from 'three'
 import styles from './Hero3DModel.module.css'
 
+function Spinner() {
+  return (
+    <div className={styles.canvasLoader} role="status" aria-label="Loading 3D model" />
+  )
+}
+
 function CanvasLoader() {
   return (
     <Html center>
-      <div className={styles.canvasLoader} role="status" aria-label="Loading 3D model" />
+      <Spinner />
     </Html>
   )
 }
@@ -42,6 +48,7 @@ export default function Hero3DModel() {
   const [isMobile, setIsMobile] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [modelScale, setModelScale] = useState(5)
+  const overlayClass = styles.canvasOverlay
   
   useEffect(() => {
     setMounted(true)
@@ -59,20 +66,19 @@ export default function Hero3DModel() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
   
-  if (!mounted) return null
+  if (!mounted) {
+    return (
+      <div className={overlayClass}>
+        <div className={styles.canvasLoaderWrapper}>
+          <Spinner />
+        </div>
+      </div>
+    )
+  }
   
   return (
     <>
-      <div 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 2
-        }}
-      >
+      <div className={overlayClass}>
       <Canvas
         camera={{ 
           position: [0, 0, 20],
