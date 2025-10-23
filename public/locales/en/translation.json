@@ -109,7 +109,6 @@
     "photoCount": "{{count}} photo",
     "photoCount_plural": "{{count}} photos",
     "empty": "More photos coming soon.",
-    "loading": "Loading...",
     "sections": {
       "cabinets": "Cabinets",
       "house": "House"

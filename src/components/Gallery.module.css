@@ -43,35 +43,6 @@
     text-align: center;
 }
 
-.ctaButton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    min-width: 220px;
-    transition: opacity 0.2s ease;
-}
-
-.ctaButton:disabled {
-    cursor: wait;
-    opacity: 0.85;
-}
-
-.loadingSpinner {
-    width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.45);
-    border-top-color: rgba(255, 255, 255, 1);
-    animation: gallerySpinner 0.7s linear infinite;
-}
-
-@keyframes gallerySpinner {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 .galleryItem {
     background-color: var(--white);
     border-radius: 15px;

@@ -109,7 +109,6 @@
     "photoCount": "{{count}} foto",
     "photoCount_plural": "{{count}} fotos",
     "empty": "Pronto añadiremos más fotos.",
-    "loading": "Cargando...",
     "sections": {
       "cabinets": "Gabinetes",
       "house": "Casas"
