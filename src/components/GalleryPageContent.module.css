@@ -7,11 +7,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.75rem;
-    text-transform: none;
-    letter-spacing: normal;
-    border: 1px solid var(--light-gray);
-    box-shadow: var(--shadow-sm);
     margin-bottom: 1.5rem;
 }
 
@@ -107,7 +102,11 @@
 
 @media (max-width: 768px) {
     .page {
-        padding: 4.5rem 0 3rem;
+        padding: 6rem 0 3rem;
+    }
+
+    .backButton {
+        margin-top: 0.75rem;
     }
 
     .hero {

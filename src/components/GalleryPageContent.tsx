@@ -40,7 +40,7 @@ export default function GalleryPageContent({ sections }: GalleryPageContentProps
       <div className="container">
         <button
           type="button"
-          className={`${styles.backButton} btn btn-white`}
+          className={`${styles.backButton} btn btn-secondary`}
           onClick={handleBackClick}
         >
           {t('gallery.back')}
