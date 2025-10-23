@@ -1,46 +1,38 @@
 'use client'
 
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styles from './Gallery.module.css'
 
 const galleryItems = [
   {
     id: 1,
-    title: 'Sun City House Painting',
-    titleEs: 'Pintura de Casa en Sun City',
-    description: 'Professional exterior house painting in Sun City',
-    descriptionEs: 'Pintura profesional de exteriores de casa en Sun City',
-    image: '/assets/gallery/1.JPEG'
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/Cabinets/buleCabinets.jpg'
   },
   {
     id: 2,
-    title: 'Sun City House Painting',
-    titleEs: 'Pintura de Casa en Sun City',
-    description: 'Quality exterior house painting in Sun City',
-    descriptionEs: 'Pintura de calidad para exteriores de casa en Sun City',
-    image: '/assets/gallery/2.JPEG'
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/House/dreamHouse.jpg'
   },
   {
     id: 3,
-    title: 'Sun City House Painting',
-    titleEs: 'Pintura de Casa en Sun City',
-    description: 'Expert exterior house painting in Sun City',
-    descriptionEs: 'Pintura experta de exteriores de casa en Sun City',
-    image: '/assets/gallery/3.JPEG'
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/House/greyHouse.jpg'
   },
   {
     id: 4,
-    title: 'Sun City House Painting',
-    titleEs: 'Pintura de Casa en Sun City',
-    description: 'Complete exterior house painting in Sun City',
-    descriptionEs: 'Pintura completa de exteriores de casa en Sun City',
-    image: '/assets/gallery/4.JPEG'
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/House/nicePool.jpg'
+  },
+  {
+    id: 5,
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/House/offWhiteHouse.jpg'
+  },
+  {
+    id: 6,
+    image: 'https://protouchgallery.s3.us-east-2.amazonaws.com/House/tallCeiling.jpg'
   }
 ]
 
 export default function Gallery() {
-  const { t, i18n, ready } = useTranslation()
-  const isSpanish = i18n.language === 'es'
+  const { t, ready } = useTranslation()
 
   if (!ready) {
     return (
@@ -56,14 +48,17 @@ export default function Gallery() {
                 <div className={styles.imageContainer}>
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt="Phoenix project"
                     className={styles.galleryImage}
                   />
                 </div>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
               </div>
             ))}
+          </div>
+          <div className={styles.galleryCTA}>
+            <Link href="/gallery" className="btn btn-secondary">
+              View Our Work
+            </Link>
           </div>
         </div>
       </section>
@@ -83,14 +78,17 @@ export default function Gallery() {
               <div className={styles.imageContainer}>
                 <img
                   src={item.image}
-                  alt={isSpanish ? item.titleEs : item.title}
+                  alt="Phoenix project"
                   className={styles.galleryImage}
                 />
               </div>
-              <h4>{isSpanish ? item.titleEs : item.title}</h4>
-              <p>{isSpanish ? item.descriptionEs : item.description}</p>
             </div>
           ))}
+        </div>
+        <div className={styles.galleryCTA}>
+          <Link href="/gallery" className="btn btn-secondary">
+            {t('gallery.viewWork')}
+          </Link>
         </div>
       </div>
     </section>

@@ -38,6 +38,11 @@
     gap: 2rem;
 }
 
+.galleryCTA {
+    margin-top: 3rem;
+    text-align: center;
+}
+
 .galleryItem {
     background-color: var(--white);
     border-radius: 15px;

@@ -103,7 +103,16 @@
   "gallery": {
     "title": "Phoenix Project Gallery",
     "subtitle": "Browse our recent painting and drywall transformations throughout the Valley",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "viewWork": "View Our Work",
+    "back": "Back",
+    "photoCount": "{{count}} photo",
+    "photoCount_plural": "{{count}} photos",
+    "empty": "More photos coming soon.",
+    "sections": {
+      "cabinets": "Cabinets",
+      "house": "House"
+    }
   },
   "about": {
     "title": "Why Choose Pro Touch?",
