@@ -6,6 +6,8 @@ import styles from './Services.module.css'
 
 export default function Services() {
   const { t } = useTranslation()
+  const introFeatures = t('services.intro.features', { returnObjects: true })
+  const featureList = Array.isArray(introFeatures) ? introFeatures : []
   
   const services = [
     {
@@ -105,6 +107,27 @@ export default function Services() {
         <div className="section-header">
           <h2 className="section-title">{t('services.title')}</h2>
           <p className="section-subtitle">{t('services.subtitle')}</p>
+        </div>
+        <div className={styles.servicesIntro}>
+          <div className={styles.servicesIntroText}>
+            <h3 className={styles.servicesIntroTitle}>{t('services.intro.heading')}</h3>
+            <p className={styles.servicesIntroBody}>{t('services.intro.body')}</p>
+            {featureList.length > 0 && (
+              <ul className={styles.servicesIntroFeatures}>
+                {featureList.map((feature: string) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div className={styles.servicesIntroActions}>
+            <a href="#contact" className="btn btn-primary">
+              {t('services.intro.primaryCta')}
+            </a>
+            <a href="#about" className="btn btn-secondary">
+              {t('services.intro.secondaryCta')}
+            </a>
+          </div>
         </div>
         <div className={styles.servicesGrid}>
           {services.map((service) => (

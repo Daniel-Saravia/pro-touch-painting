@@ -12,16 +12,22 @@
     "subtitle": "Servicio para Phoenix, Scottsdale y todo el Valle",
     "description": "Pro Touch Painting & Drywall ofrece servicios de pintura, reparación de drywall y acabados de alta calidad para hogares, comercios y comunidades HOA en Phoenix. Confía en profesionales licenciados que atienden todo el condado de Maricopa.",
     "cta": "Obtén Cotización Gratis",
-    "learnMore": "Conoce Más",
-    "features": [
-      "Licenciados • Asegurados • Garantizados",
-      "25+ años sirviendo Goodyear y el Valle",
-      "Preparación y acabados con garantía"
-    ]
+    "learnMore": "Conoce Más"
   },
   "services": {
     "title": "Servicios de Pintura y Drywall en Phoenix",
     "subtitle": "Pintores y especialistas en drywall con licencia en Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale y ciudades cercanas",
+    "intro": {
+      "heading": "Expertos en Pintura y Drywall en Phoenix",
+      "body": "Pro Touch Painting & Drywall ofrece servicios de pintura, reparación de drywall y acabados de alta calidad para hogares, comercios y comunidades HOA en Phoenix. Confía en profesionales licenciados que atienden todo el condado de Maricopa.",
+      "features": [
+        "Licenciados • Asegurados • Garantizados",
+        "25+ años sirviendo Goodyear y el Valle",
+        "Preparación y acabados con garantía"
+      ],
+      "primaryCta": "Obtén Cotización Gratis",
+      "secondaryCta": "Conoce Más"
+    },
     "learnMore": "Más Información",
     "drywall": {
       "title": "Instalación y Reparación de Drywall",
