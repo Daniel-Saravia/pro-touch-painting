@@ -103,7 +103,16 @@
   "gallery": {
     "title": "Galería de Proyectos en Phoenix",
     "subtitle": "Descubre nuestras transformaciones recientes de pintura y drywall en todo el Valle",
-    "viewAll": "Ver Todo"
+    "viewAll": "Ver Todo",
+    "viewWork": "Ver Nuestro Trabajo",
+    "back": "Regresar",
+    "photoCount": "{{count}} foto",
+    "photoCount_plural": "{{count}} fotos",
+    "empty": "Pronto añadiremos más fotos.",
+    "sections": {
+      "cabinets": "Gabinetes",
+      "house": "Casas"
+    }
   },
   "about": {
     "title": "¿Por Qué Elegir Pro Touch?",
