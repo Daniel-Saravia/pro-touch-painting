@@ -21,6 +21,7 @@
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.25);
+    white-space: nowrap; /* Prevent Safari from wrapping the tel link */
 }
 
 .phoneLink {
