@@ -21,7 +21,7 @@ export default function Services() {
           <line x1="9" y1="17" x2="15" y2="17"></line>
         </svg>
       ),
-      image: "/assets/drywall.avif"
+      image: "/assets/drywall2.jpg"
     },
     {
       id: 2,

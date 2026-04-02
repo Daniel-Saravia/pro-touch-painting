@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/assets/paHouse.webp',
+        url: '/assets/homes.jpg',
         width: 1200,
         height: 630,
         alt: 'Pro Touch Painting & Drywall crew painting a Phoenix home exterior'
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Phoenix Painting & Drywall Experts | Pro Touch Painting & Drywall',
     description: 'Full-service painting and drywall contractors serving Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, and Glendale.',
     creator: '@ProTouchPainting',
-    images: ['/assets/paHouse.webp']
+    images: ['/assets/homes.jpg']
   },
   robots: {
     index: true,
