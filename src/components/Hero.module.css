@@ -1,6 +1,6 @@
 .hero {
     min-height: 100vh;
-    background: url('/assets/paHouse.webp') center center/cover no-repeat;
+    background: url('/assets/homes.jpg') center center/cover no-repeat;
     display: flex;
     align-items: center;
     position: relative;
